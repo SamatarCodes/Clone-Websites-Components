@@ -11,4 +11,4 @@
 | Number | Name of site/component | Challenge Details                   | Solution                                                          | Preview Site                                  |
 | ------ | ---------------------- | ----------------------------------- | ----------------------------------------------------------------- | --------------------------------------------- |
 | 1      | Small Cos.             | [Small Cos.](https://smallcos.com/) | [github link](https://github.com/SamatarCodes/smallcos.com-clone) | [Netlify](https://smallcos.netlify.app/)      |
-| 2      | GitHub Clone           | [Github](httpss://github.com)       | [github link](https://github.com/SamatarCodes/github)             | [Netlify](https://github-clone7.netlify.app/) |
+| 2      | GitHub Clone           | [Github](https://github.com)        | [github link](https://github.com/SamatarCodes/github)             | [Netlify](https://github-clone7.netlify.app/) |
