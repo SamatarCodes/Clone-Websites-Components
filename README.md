@@ -2,11 +2,7 @@
 
 #### Welcome everyone! 👋 &nbsp; This is a list of websites, components that i've built to practice HTML, CSS & JS. I will keep updating the list
 
-&nbsp;
-
 #### Some the inspiration came from [UI Design Daily](https://uidesigndaily.com/) and [FrontEndMentor](https://www.frontendmentor.io/)
-
-&nbsp;
 
 #### I've created this table to not only keep track of it but also for anyone that is interested of the solutions.
 
