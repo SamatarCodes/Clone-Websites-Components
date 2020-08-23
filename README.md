@@ -8,7 +8,8 @@
 
 &nbsp;
 
-| Number | Name of site/component | Challenge Details                   | Solution                                                          | Preview Site                                  |
-| ------ | ---------------------- | ----------------------------------- | ----------------------------------------------------------------- | --------------------------------------------- |
-| 1      | Small Cos.             | [Small Cos.](https://smallcos.com/) | [github link](https://github.com/SamatarCodes/smallcos.com-clone) | [Netlify](https://smallcos.netlify.app/)      |
-| 2      | GitHub Clone           | [Github](https://github.com)        | [github link](https://github.com/SamatarCodes/github)             | [Netlify](https://github-clone7.netlify.app/) |
+| Number | Name of site/component | Challenge Details                                                                | Solution                                                                                                    | Preview Site                                  |
+| ------ | ---------------------- | -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| 1      | Small Cos.             | [Small Cos.](https://smallcos.com/)                                              | [github link](https://github.com/SamatarCodes/smallcos.com-clone)                                           | [Netlify](https://smallcos.netlify.app/)      |
+| 2      | GitHub Clone           | [Github](https://github.com)                                                     | [github link](https://github.com/SamatarCodes/github)                                                       | [Netlify](https://github-clone7.netlify.app/) |
+| 3      | Edit account component | [Design Daily](https://uidesigndaily.com/posts/sketch-edit-account-card-day-622) | [github link](https://github.com/SamatarCodes/Clone-Websites-Components/tree/master/Edit_account_component) | [Netlify](https://edit-account.netlify.app/)  |
