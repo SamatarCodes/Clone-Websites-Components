@@ -18,6 +18,7 @@ body
     overflow-x: hidden
     display: flex
     height: 100vh
+    position: relative
 
 img
     height: auto
@@ -33,6 +34,19 @@ a
     text-decoration: none
 
 // left-section
+.hamburger
+    position: absolute
+    right: 2rem
+    top: 2rem
+    display: none
+    cursor: pointer
+
+.toggle
+    display: none
+
+    &:checked ~ .sidebar
+        display: block
+
 .sidebar
     background-color: #0D0D0D
     flex: 0 0 22rem
@@ -50,13 +64,23 @@ a
             margin-top: .5rem
 
     .menu__list
-        margin: 0 3rem
+        // padding: 0 3rem
 
         .menu__item
-            margin-top: 1.5rem
+            padding: 0 3rem
+            margin-top: 2.2rem
 
+            border-left: .2rem solid #f7cbc7
             .icon
                 margin-right: 1.5rem
+
+@media screen and (max-width: 992px)
+    .sidebar
+        display: none
+
+    .hamburger
+        display: block
+
 .content-area
     background-color: #1E1C24
     flex: 1

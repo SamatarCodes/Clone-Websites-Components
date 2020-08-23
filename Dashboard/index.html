@@ -11,30 +11,37 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+   <nav class="hamburger">
+     <label for="toggle">
+      <i class="fas fa-bars fa-2x "></i>
+     </label>
+     
+   </nav>
+   <input type="checkbox" id="toggle" class="toggle">
    <section class="sidebar">
      <!-- profile image section -->
      <div class="profile">
        <img src="images/profile.png" alt="profile image" class="profile-image">
-       <p class="profile_title">Didier Drogba</p>
+       <p class="profile_title">Samatar</p>
      </div>
      <!-- menu section -->
      
      <ul class="menu__list">
         <li class="menu__item">
           <i class="fas fa-home fa-lg icon"></i>
-          <a href="#">Home </a>
+          <a href="#" class="menu__links">Home </a>
         </li>
         <li class="menu__item">
           <i class="fas fa-history fa-lg icon"></i>
-          <a href="#">History</a>
+          <a href="#" class="menu__links" >History</a>
         </li>
         <li class="menu__item">
           <i class="fas fa-info-circle fa-lg icon"></i>
-          <a href="#">About</a>
+          <a href="#" class="menu__links">About</a>
         </li>
         <li class="menu__item">
           <i class="fas fa-id-card fa-lg icon"></i>
-          <a href="#">Contact</a>
+          <a href="#" class="menu__links">Contact</a>
         </li>
        
      </ul>
@@ -43,8 +50,10 @@
     </div>
     <section class="content-area">
       right-section
+
     </section>
 
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
