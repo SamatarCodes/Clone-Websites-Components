@@ -36,9 +36,10 @@ a {
 
 .edit-container {
   max-width: 40rem;
-  border: .1rem solid #696A8F;
+  border: .1rem solid #282a4b;
   border-radius: .4rem;
-  width: 38rem; }
+  width: 38rem;
+  box-shadow: .1rem .1rem .2rem #2c2e44; }
   .edit-container .first-section {
     padding: 2rem 4rem;
     font-size: 1.2rem;
@@ -46,10 +47,34 @@ a {
   .edit-container .second-section {
     background-color: #2F3056; }
     .edit-container .second-section .form {
-      display: flex;
-      flex-direction: column;
       padding: 4rem; }
+      .edit-container .second-section .form .name-info {
+        display: flex;
+        flex-direction: column; }
       .edit-container .second-section .form input {
         background-color: transparent;
+        color: #fff;
         padding: 1rem;
-        border: .1rem solid #696A8F; }
+        border: .1rem solid #363761;
+        margin-bottom: 2rem; }
+      .edit-container .second-section .form .birthday-input {
+        display: flex; }
+        .edit-container .second-section .form .birthday-input input {
+          overflow-x: hidden;
+          margin-top: 1rem;
+          margin-bottom: 0; }
+  .edit-container .third-section {
+    padding: 2rem 4rem;
+    font-size: 1.2rem;
+    font-weight: 100; }
+    .edit-container .third-section .save-box--cancel,
+    .edit-container .third-section .save-box--save {
+      padding: 1rem 5rem;
+      border: none;
+      color: #fff;
+      border-radius: .2rem; }
+    .edit-container .third-section .save-box--cancel {
+      background-color: #34355B;
+      margin-right: 1rem; }
+    .edit-container .third-section .save-box--save {
+      background-color: #F27362; }
