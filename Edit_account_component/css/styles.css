@@ -72,6 +72,8 @@ a {
           overflow-x: hidden;
           margin-top: 1rem;
           margin-bottom: 0; }
+          .edit-container .second-section .form .birthday-input input:focus {
+            outline-color: #7B7BCA; }
   .edit-container .third-section {
     padding: 2rem 4rem;
     font-size: 1.2rem; }
