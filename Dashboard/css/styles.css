@@ -22,8 +22,8 @@ body {
 img {
   height: auto;
   width: auto;
-  max-width: 3rem;
-  max-height: 3rem; }
+  max-width: 6rem;
+  max-height: 6rem; }
 
 ul {
   list-style: none; }
@@ -31,6 +31,11 @@ ul {
 a {
   color: inherit;
   text-decoration: none; }
+
+.buttons {
+  border: none;
+  padding: .5rem 1.5em;
+  cursor: pointer; }
 
 .hamburger {
   position: absolute;
@@ -53,7 +58,9 @@ a {
   .sidebar .profile {
     margin: 3rem; }
     .sidebar .profile .profile-image {
-      border-radius: 50%; }
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem; }
     .sidebar .profile .profile_title {
       color: #f7f6fa;
       margin-top: .5rem; }
@@ -109,12 +116,51 @@ a {
         .content-area .main-container .second-row .account__info .account__lists {
           display: flex;
           justify-content: space-between; }
-      .content-area .main-container .second-row .buttons .withdraw--btn,
-      .content-area .main-container .second-row .buttons .deposit--btn {
-        border: none;
-        padding: .5rem 1.5em;
-        cursor: pointer; }
       .content-area .main-container .second-row .buttons .withdraw--btn {
         background-color: #64616B; }
       .content-area .main-container .second-row .buttons .deposit--btn {
         background-color: #f7cbc7; }
+
+.edit-account {
+  max-width: 24rem;
+  margin-top: 2rem; }
+  .edit-account .image-section {
+    display: flex;
+    align-items: flex-end; }
+    .edit-account .image-section .edit--title {
+      font-size: 1rem; }
+    .edit-account .image-section .edit--profile {
+      border-radius: 50%;
+      margin-top: 1rem; }
+    .edit-account .image-section .edit--btn {
+      background-color: #64616B;
+      margin-left: 1rem; }
+
+.form {
+  margin-top: 1rem; }
+  .form .firstname__input,
+  .form .lastname__input,
+  .form .email__input {
+    display: flex;
+    flex-direction: column;
+    border-bottom: .1rem solid #64616B;
+    margin-bottom: 2rem; }
+    .form .firstname__input label,
+    .form .lastname__input label,
+    .form .email__input label {
+      color: #64616B;
+      font-size: .9rem; }
+    .form .firstname__input input,
+    .form .lastname__input input,
+    .form .email__input input {
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      outline: none; }
+      .form .firstname__input input:active,
+      .form .lastname__input input:active,
+      .form .email__input input:active {
+        outline: 1px solid red; }
+  .form .save {
+    width: 100%;
+    background-color: #f7cbc7; }

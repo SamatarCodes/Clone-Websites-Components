@@ -23,8 +23,8 @@ body
 img
     height: auto
     width: auto
-    max-width: 3rem
-    max-height: 3rem
+    max-width: 6rem
+    max-height: 6rem
 
 ul
     list-style: none
@@ -32,6 +32,11 @@ ul
 a
     color: inherit
     text-decoration: none
+
+.buttons
+    border: none
+    padding: .5rem 1.5em
+    cursor: pointer
 
 // left-section
 .hamburger
@@ -59,6 +64,8 @@ a
 
         .profile-image
             border-radius: 50%
+            width: 3rem
+            height: 3rem
 
         .profile_title
             color: #f7f6fa
@@ -134,14 +141,56 @@ a
 
             .buttons
 
-                .withdraw--btn,
-                .deposit--btn
-                    border: none
-                    padding: .5rem 1.5em
-                    cursor: pointer
-
                 .withdraw--btn
                     background-color: #64616B
 
                 .deposit--btn
                     background-color: #f7cbc7
+
+.edit-account
+
+    max-width: 24rem
+    margin-top: 2rem
+
+    .image-section
+        display: flex
+        align-items: flex-end
+
+        .edit--title
+            font-size: 1rem
+        .edit--profile
+            border-radius: 50%
+            margin-top: 1rem
+
+        .edit--btn
+            background-color: #64616B
+            margin-left: 1rem
+
+    .edit-image-container
+
+.form
+    margin-top: 1rem
+
+    .firstname__input,
+    .lastname__input,
+    .email__input
+        display: flex
+        flex-direction: column
+        border-bottom: .1rem solid #64616B
+        margin-bottom: 2rem
+
+        label
+            color: #64616B
+            font-size: .9rem
+        input
+            background-color: transparent
+            border: none
+            color: #fff
+            outline: none
+
+            &:active
+                outline: 1px solid red
+
+    .save
+        width: 100%
+        background-color: #f7cbc7
