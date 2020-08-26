@@ -37,7 +37,8 @@ a {
   right: 2rem;
   top: 2rem;
   display: none;
-  cursor: pointer; }
+  cursor: pointer;
+  color: #f7f6fa; }
 
 .toggle {
   display: none; }
@@ -71,4 +72,17 @@ a {
 
 .content-area {
   background-color: #1E1C24;
-  flex: 1; }
+  flex: 1;
+  color: #ffffff; }
+  .content-area .main-container {
+    margin: 5rem;
+    height: 60vh; }
+    .content-area .main-container .first-row {
+      display: flex;
+      justify-content: space-between; }
+      .content-area .main-container .first-row .first__profile .first__profile--name {
+        font-size: 2rem; }
+      .content-area .main-container .first-row .first__profile .first__profile--account {
+        color: #64616B; }
+      .content-area .main-container .first-row .first__profile .first__profile--account-number {
+        color: #f7cbc7; }
