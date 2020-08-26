@@ -9,6 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
   <body>
    <nav class="hamburger">
@@ -18,7 +19,7 @@
      
    </nav>
    <input type="checkbox" id="toggle" class="toggle">
-   <section class="sidebar">
+   <section class="sidebar" id="sidebar">
      <!-- profile image section -->
      <div class="profile">
        <img src="images/profile.png" alt="profile image" class="profile-image">
@@ -29,7 +30,7 @@
      <ul class="menu__list">
         <li class="menu__item">
           <i class="fas fa-home fa-lg icon"></i>
-          <a href="#" class="menu__links">Home </a>
+          <a href="#" class="menu__links" @click="check">Home </a>
         </li>
         <li class="menu__item">
           <i class="fas fa-history fa-lg icon"></i>
@@ -48,7 +49,7 @@
    </section>
       
     </div>
-    <section class="content-area">
+    <section class="content-area" id="content-area">
       <div class="main-container">
         <div class="first-row">
           <div class="first__profile">
@@ -66,10 +67,10 @@
           <!-- account info left side -->
           <div class="account__info">
             <ul class="account__lists">
-              <li class="account__items">
-                <a href="#">Account Information</a>
+              <li class="account__items" @click="show = true">
+                <a  href="#">Account Information</a>
               </li>
-              <li class="account__items">
+              <li class="account__items" @click="show = false">
                 <a href="#">Security</a>
               </li>
 
@@ -90,7 +91,7 @@
         </div>
 
         <!-- Edit account section -->
-        <div class="edit-account">
+        <div v-if="show" class="edit-account" >
           <div class="image-section">
             <!-- edit image -->
               <div class="edit-image-container">
