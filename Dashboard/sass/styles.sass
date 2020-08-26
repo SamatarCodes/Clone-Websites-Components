@@ -89,12 +89,15 @@ a
 
     .main-container
         // outline: 1px solid red
-        margin: 5rem
+        margin: 5rem auto
         height: 60vh
+        max-width: 100rem
+        padding: 0 5rem
 
         .first-row
             display: flex
             justify-content: space-between
+
             .first__profile
 
                 .first__profile--name
@@ -103,3 +106,42 @@ a
                     color: #64616B
                 .first__profile--account-number
                     color: #f7cbc7
+
+            .balance
+                border: .1rem solid #f7cbc7
+                display: flex
+                flex-direction: column
+                justify-content: center
+                padding: .2rem 1rem
+
+                .balance--number
+                    color: #f7cbc7
+
+        .second-row
+            color: #64616B
+            font-size: 1.4rem
+            margin-top: 4rem
+            display: flex
+            justify-content: space-between
+            padding-bottom: 1rem
+            border-bottom: .1rem solid #64616B
+
+            .account__info
+                flex: 0 1 50rem
+                .account__lists
+                    display: flex
+                    justify-content: space-between
+
+            .buttons
+
+                .withdraw--btn,
+                .deposit--btn
+                    border: none
+                    padding: .5rem 1.5em
+                    cursor: pointer
+
+                .withdraw--btn
+                    background-color: #64616B
+
+                .deposit--btn
+                    background-color: #f7cbc7
