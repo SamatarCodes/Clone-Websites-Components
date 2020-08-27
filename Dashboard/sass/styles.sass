@@ -35,7 +35,7 @@ a
 
 .buttons
     border: none
-    padding: .5rem 1.5em
+    padding: .5rem 1.5rem
     cursor: pointer
 
 // left-section
@@ -78,13 +78,15 @@ a
             padding: 0 3rem
             margin-top: 2.2rem
 
-            border-left: .2rem solid #f7cbc7
             .icon
                 margin-right: 1.5rem
 
 @media screen and (max-width: 992px)
     .sidebar
         display: none
+        position: absolute
+        height: 100vh
+        width: 22rem
 
     .hamburger
         display: block
@@ -98,9 +100,9 @@ a
     .main-container
         // outline: 1px solid red
         margin: 5rem auto
-        height: 60vh
+        width: 80%
         max-width: 100rem
-        padding: 0 5rem
+        // padding: 0 5rem
 
         .first-row
             display: flex
@@ -140,7 +142,7 @@ a
                     display: flex
                     justify-content: space-between
 
-            .buttons
+            .btn-container
 
                 .withdraw--btn
                     background-color: #64616B
@@ -159,7 +161,10 @@ a
         align-items: flex-end
 
         .edit--title
-            font-size: 1rem
+            font-size: .9rem
+            color: #64616B
+            font-weight: 100
+
         .edit--profile
             border-radius: 50%
             margin-top: 1rem
