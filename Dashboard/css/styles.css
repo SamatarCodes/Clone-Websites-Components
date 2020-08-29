@@ -45,14 +45,9 @@ a {
   cursor: pointer;
   color: #f7f6fa; }
 
-.toggle {
-  display: none; }
-  .toggle:checked ~ .sidebar {
-    display: block; }
-
 .sidebar {
   background-color: #0D0D0D;
-  flex: 0 0 22rem;
+  width: 22rem;
   font-size: 1.3rem;
   color: #64616B; }
   .sidebar .profile {
@@ -70,12 +65,21 @@ a {
     .sidebar .menu__list .menu__item .icon {
       margin-right: 1.5rem; }
 
+.toggle {
+  display: none; }
+  .toggle:checked ~ .sidebar {
+    display: block;
+    opacity: 1;
+    transition: opacity .5s linear; }
+
 @media screen and (max-width: 992px) {
   .sidebar {
-    display: none;
-    position: absolute;
+    display: block;
+    opacity: 0;
+    position: fixed;
     height: 100vh;
-    width: 22rem; }
+    width: 22rem;
+    transition: opacity .5s linear; }
   .hamburger {
     display: block; } }
 
