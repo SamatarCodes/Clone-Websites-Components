@@ -24,39 +24,50 @@
           <div class="logo">
             <img src="images/S_logo.png" class="navbar--logo" alt="logo" />
           </div>
-          <!-- menu -->
-          <ul class="menu">
-            <li class="menu__list">
-              <a href="#" class="menu__links">Actors</a>
-            </li>
-            <li class="menu__list">
-              <a href="#" class="menu__links">Projects</a>
-            </li>
-            <li class="menu__list">
-              <a href="#" class="menu__links">Castings</a>
-            </li>
-            <li class="menu__list">
-              <a href="#" class="menu__links">Payouts</a>
-            </li>
-            <li class="menu__list"><a href="#" class="menu__links">Team</a></li>
-          </ul>
-          <div class="profile">
-            <!-- input -->
-            <div class="search-container">
-              <i class="fas fa-search search-icon"></i>
-              <input type="text" class="search-input" placeholder="Search" />
-            </div>
 
-            <!-- profile -->
-            <span class="profile--notification">3</span>
-            <img
-              src="images/profile.png"
-              class="profile--image"
-              alt="profile image"
-            />
+          <label for="toggle">
+            <!-- hambuger menu -->
+            <i class="fas fa-bars fa-lg hamburger-icon"></i>
+          </label>
+          <input type="checkbox" class="nav-toggle" id="toggle" />
+          <!-- menu -->
+          <div class="menu__container">
+            <ul class="menu">
+              <li class="menu__list">
+                <a href="#" class="menu__links">Actors</a>
+              </li>
+              <li class="menu__list">
+                <a href="#" class="menu__links">Projects</a>
+              </li>
+              <li class="menu__list">
+                <a href="#" class="menu__links">Castings</a>
+              </li>
+              <li class="menu__list">
+                <a href="#" class="menu__links">Payouts</a>
+              </li>
+              <li class="menu__list">
+                <a href="#" class="menu__links">Team</a>
+              </li>
+            </ul>
+            <div class="profile">
+              <!-- input -->
+              <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search" />
+              </div>
+
+              <!-- profile -->
+              <span class="profile--notification">3</span>
+              <img
+                src="images/profile.png"
+                class="profile--image"
+                alt="profile image"
+              />
+            </div>
           </div>
         </nav>
       </div>
+
       <!-- bottom container -->
       <div class="container__bottom"></div>
     </section>

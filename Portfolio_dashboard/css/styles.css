@@ -37,7 +37,8 @@ a {
     justify-content: space-between;
     align-items: center;
     font-size: 1.3em;
-    width: 90%;
+    width: 95%;
+    max-width: 120rem;
     margin: 0 auto;
     padding: 1.5rem 0;
     flex-wrap: wrap; }
@@ -45,21 +46,34 @@ a {
 .logo {
   flex: 0;
   margin-right: 1rem;
-  display: flex; }
+  display: flex;
+  align-items: center; }
   .logo .navbar--logo {
     width: 2.8rem;
     height: 2rem; }
 
-.menu {
-  display: flex;
-  justify-content: space-between;
+.hamburger-icon {
+  display: none; }
+
+.nav-toggle {
+  display: none; }
+  .nav-toggle:checked ~ .menu__container {
+    display: flex; }
+
+.menu__container {
   flex: 1;
-  color: #C3C7D1; }
-  .menu .menu__list:first-of-type {
-    color: #000; }
-  .menu .menu__list .menu__links:hover {
-    color: #000;
-    transition: all 0.5s; }
+  display: flex;
+  align-items: center; }
+  .menu__container .menu {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    color: #C3C7D1; }
+    .menu__container .menu .menu__list:first-of-type {
+      color: #000; }
+    .menu__container .menu .menu__list .menu__links:hover {
+      color: #000;
+      transition: all 0.5s; }
 
 .profile {
   flex: 2;
@@ -89,3 +103,32 @@ a {
     margin: 0 1.5rem  0 2.5rem; }
   .profile .profile--image {
     border-radius: 50%; }
+
+@media screen and (max-width: 992px) {
+  .navbar {
+    position: relative; }
+    .navbar .menu__container {
+      display: none;
+      position: absolute;
+      margin-top: 1rem;
+      padding: 1rem;
+      top: 5rem;
+      flex-direction: column-reverse;
+      right: 0rem;
+      background-color: #fff;
+      border-radius: .4rem; }
+      .navbar .menu__container .menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%; }
+        .navbar .menu__container .menu .menu__list {
+          padding: .5rem; }
+          .navbar .menu__container .menu .menu__list:hover {
+            background-color: #F5F7FC; }
+          .navbar .menu__container .menu .menu__list:first-of-type {
+            margin-top: 1rem; }
+    .navbar .logo {
+      justify-content: space-between;
+      flex: 1; }
+    .navbar .hamburger-icon {
+      display: block; } }
