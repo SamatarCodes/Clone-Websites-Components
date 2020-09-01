@@ -1,0 +1,118 @@
+.container__bottom
+    width: 95%
+    max-width: 120rem
+    margin: 4rem auto
+    display: flex
+
+// * SIDEBAR
+.sidebar
+    flex: 1
+
+    .user__card,
+    .skills
+        display: flex
+        flex-direction: column
+        background-color: #fff
+        border-radius: .8rem
+
+        .user__star-rating
+            padding: 1rem
+            display: flex
+            justify-content: center
+
+            .user--star
+                margin-right: .8rem
+                color: $yellow
+
+            .star--title
+                color: $dark_gray
+
+        .user__image-container
+
+            .user--image
+                max-width: 100%
+
+.user__description
+    text-align: center
+
+    .user--name
+        font-size: 1.7rem
+
+.user__location
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 1rem auto
+
+    .user--city,
+    .user--age,
+    .spacer
+        font-size: 1rem
+        font-weight: 100
+        color: $dark_gray
+        padding: 0 .2rem
+    .spacer
+        padding-bottom: .4rem
+
+.project
+
+    .project--btn,
+    .project--email
+        border-radius: .5rem
+        border: none
+
+    .project--btn
+        padding: .7rem 1.5rem
+        background-color: #000
+        color: #fff
+
+    .fa-star
+        margin-right: .8rem
+
+    .project--email
+
+        padding: .8rem 1.1rem
+        background-color: $light-gray
+        border-radus: .4rem
+    hr
+        width: 80%
+        margin: 0 auto
+        margin: 2rem auto
+        border: .1rem solid $light-gray
+.availability
+    display: flex
+    justify-content: center
+    align-items: center
+    color: #FF9B9B
+
+    .availability--status
+
+        margin-left: 1rem
+        font-weight: 500
+.rate
+    color: $light-gray
+    padding: .2rem 0 1.5rem
+
+.skills
+    margin-top: 1rem
+    padding: 1rem
+    display: flex
+    justify-content: flex-start
+
+    .skills__list
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+    .skills--title
+        padding: .5rem
+    .skills--name
+        margin: .6rem
+        padding: .2rem .8rem
+        border-radius: .4rem
+        color: $dark-gray
+        background-color: #FEDBDB
+    .skills--more
+        color: $dark-gray
+// * MAIN CONTENT ON THE RIGHT
+.content
+    flex: 4

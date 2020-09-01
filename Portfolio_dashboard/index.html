@@ -58,18 +58,77 @@
 
               <!-- profile -->
               <span class="profile--notification">3</span>
-              <img
-                src="images/profile.png"
-                class="profile--image"
-                alt="profile image"
-              />
+              <div class="profile__image">
+                <img
+                  src="images/profile.png"
+                  class="profile--image"
+                  alt="profile image"
+                />
+              </div>
             </div>
           </div>
         </nav>
       </div>
 
       <!-- bottom container -->
-      <div class="container__bottom"></div>
+      <main class="container__bottom">
+        <!-- sidebar -->
+        <div class="sidebar">
+          <!-- user card -->
+          <div class="user__card">
+            <!-- star -->
+            <div class="user__star-rating">
+              <span class="user--star"><i class="fas fa-star"></i></span>
+              <span class="star--title">Rising Star</span>
+            </div>
+            <div class="user__image-container">
+              <img
+                class="user--image"
+                src="images/image1.jpg"
+                alt="image of a woman"
+              />
+            </div>
+            <div class="user__description">
+              <h4 class="user--name">Julienne Boudras</h4>
+              <div class="user__location">
+                <span class="user--city">New York</span>
+                <span class="spacer">.</span>
+                <span class="user--age">25 y.o</span>
+              </div>
+              <!-- projects -->
+              <div class="project">
+                <button class="project--btn">
+                  <i class="far fa-star"></i>
+                  Add to project
+                </button>
+                <button class="project--email">
+                  <i class="far fa-envelope"></i>
+                </button>
+                <hr />
+              </div>
+              <div class="availability">
+                <span class="bolt"><i class="fas fa-bolt fa-lg"></i></span>
+                <h3 class="availability--status">Available now</h3>
+              </div>
+              <div class="rate">
+                <h4>$25.00/hour</h4>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+          <div class="skills">
+            <h4 class="skills--title">Skills</h4>
+            <div class="skills__list">
+              <span class="skills--name">Swimming</span>
+              <span class="skills--name">Cycling</span>
+              <span class="skills--name">Cooking</span>
+              <span class="skills--name">Cycling</span>
+              <span class="skills--more">+23</span>
+            </div>
+          </div>
+        </div>
+        <div class="content"></div>
+      </main>
     </section>
   </body>
 </html>

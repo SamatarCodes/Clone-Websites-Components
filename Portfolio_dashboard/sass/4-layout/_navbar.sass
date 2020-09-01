@@ -88,12 +88,16 @@
         border-radius: 45%
         margin: 0 1.5rem  0 2.5rem
 
-    .profile--image
-        border-radius: 50%
+    .profile__image
+        max-width: 3rem
+        .profile--image
+            border-radius: 50%
+            max-width: 100%
 
 @media screen and (max-width: 992px)
     .navbar
         position: relative
+        width: 100%
 
         .menu__container
             display: none
@@ -105,6 +109,7 @@
             right: 0rem
             background-color: #fff
             border-radius: .4rem
+            max-width: 35rem
 
             .menu
                 display: flex
@@ -120,6 +125,12 @@
                     &:first-of-type
 
                         margin-top: 1rem
+
+            .profile
+                justify-content: space-between
+
+                .profile--notification
+
         .logo
             justify-content: space-between
             flex: 1

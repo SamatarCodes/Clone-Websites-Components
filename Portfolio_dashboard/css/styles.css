@@ -18,11 +18,6 @@ body {
   overflow-x: hidden;
   background-color: #F5F7FC; }
 
-img {
-  width: 3rem;
-  height: 3rem;
-  max-width: 7rem; }
-
 ul {
   list-style: none; }
 
@@ -101,12 +96,16 @@ a {
     background-color: #4E9AFF;
     border-radius: 45%;
     margin: 0 1.5rem  0 2.5rem; }
-  .profile .profile--image {
-    border-radius: 50%; }
+  .profile .profile__image {
+    max-width: 3rem; }
+    .profile .profile__image .profile--image {
+      border-radius: 50%;
+      max-width: 100%; }
 
 @media screen and (max-width: 992px) {
   .navbar {
-    position: relative; }
+    position: relative;
+    width: 100%; }
     .navbar .menu__container {
       display: none;
       position: absolute;
@@ -116,7 +115,8 @@ a {
       flex-direction: column-reverse;
       right: 0rem;
       background-color: #fff;
-      border-radius: .4rem; }
+      border-radius: .4rem;
+      max-width: 35rem; }
       .navbar .menu__container .menu {
         display: flex;
         flex-direction: column;
@@ -127,8 +127,120 @@ a {
             background-color: #F5F7FC; }
           .navbar .menu__container .menu .menu__list:first-of-type {
             margin-top: 1rem; }
+      .navbar .menu__container .profile {
+        justify-content: space-between; }
     .navbar .logo {
       justify-content: space-between;
       flex: 1; }
     .navbar .hamburger-icon {
       display: block; } }
+
+.container__bottom {
+  width: 95%;
+  max-width: 120rem;
+  margin: 4rem auto;
+  display: flex; }
+
+.sidebar {
+  flex: 1; }
+  .sidebar .user__card,
+  .sidebar .skills {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: .8rem; }
+    .sidebar .user__card .user__star-rating,
+    .sidebar .skills .user__star-rating {
+      padding: 1rem;
+      display: flex;
+      justify-content: center; }
+      .sidebar .user__card .user__star-rating .user--star,
+      .sidebar .skills .user__star-rating .user--star {
+        margin-right: .8rem;
+        color: #EFD35B; }
+      .sidebar .user__card .user__star-rating .star--title,
+      .sidebar .skills .user__star-rating .star--title {
+        color: #939598; }
+    .sidebar .user__card .user__image-container .user--image,
+    .sidebar .skills .user__image-container .user--image {
+      max-width: 100%; }
+
+.user__description {
+  text-align: center; }
+  .user__description .user--name {
+    font-size: 1.7rem; }
+
+.user__location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto; }
+  .user__location .user--city,
+  .user__location .user--age,
+  .user__location .spacer {
+    font-size: 1rem;
+    font-weight: 100;
+    color: #939598;
+    padding: 0 .2rem; }
+  .user__location .spacer {
+    padding-bottom: .4rem; }
+
+.project .project--btn,
+.project .project--email {
+  border-radius: .5rem;
+  border: none; }
+
+.project .project--btn {
+  padding: .7rem 1.5rem;
+  background-color: #000;
+  color: #fff; }
+
+.project .fa-star {
+  margin-right: .8rem; }
+
+.project .project--email {
+  padding: .8rem 1.1rem;
+  background-color: #C3C7D1;
+  border-radus: .4rem; }
+
+.project hr {
+  width: 80%;
+  margin: 0 auto;
+  margin: 2rem auto;
+  border: 0.1rem solid #C3C7D1; }
+
+.availability {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FF9B9B; }
+  .availability .availability--status {
+    margin-left: 1rem;
+    font-weight: 500; }
+
+.rate {
+  color: #C3C7D1;
+  padding: .2rem 0 1.5rem; }
+
+.skills {
+  margin-top: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start; }
+  .skills .skills__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center; }
+  .skills .skills--title {
+    padding: .5rem; }
+  .skills .skills--name {
+    margin: .6rem;
+    padding: .2rem .8rem;
+    border-radius: .4rem;
+    color: #939598;
+    background-color: #FEDBDB; }
+  .skills .skills--more {
+    color: #939598; }
+
+.content {
+  flex: 4; }
