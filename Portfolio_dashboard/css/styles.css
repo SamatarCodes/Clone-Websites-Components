@@ -164,16 +164,18 @@ a {
   width: 90%;
   max-width: 120rem;
   margin: 4rem auto;
-  display: flex; }
+  display: flex;
+  justify-content: space-between; }
 
 .sidebar {
-  flex: 1; }
+  flex: 1.5; }
   .sidebar .user__card,
   .sidebar .skills {
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    border-radius: .8rem; }
+    border-radius: .8rem;
+    flex-wrap: wrap; }
     .sidebar .user__card .user__star-rating,
     .sidebar .skills .user__star-rating {
       padding: 1rem;
@@ -246,3 +248,44 @@ a {
 
 .content {
   flex: 4; }
+
+.content {
+  margin-left: 2rem;
+  border-radius: .8rem;
+  background-color: #fff;
+  flex: 5; }
+  .content .content__inside {
+    margin: .5rem 2rem 0 2rem; }
+    .content .content__inside .total {
+      color: #939598;
+      padding-bottom: 1rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center; }
+      .content .content__inside .total .total--period {
+        padding: 0 .4rem .4rem; }
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap; }
+  .images-container .images--first-image {
+    max-width: 100%;
+    width: 15rem;
+    object-fit: cover;
+    border-radius: .4rem;
+    margin-right: 1rem; }
+
+.experience {
+  display: flex;
+  margin-top: 3rem; }
+  .experience .experience__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 10%; }
+    .experience .experience__section .experience--length {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-bottom: .5rem; }
+    .experience .experience__section .experience--title {
+      color: #939598; }
