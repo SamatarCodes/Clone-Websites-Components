@@ -167,15 +167,18 @@ a {
   display: flex;
   justify-content: space-between; }
 
+@media screen and (max-width: 565px) {
+  .container__bottom {
+    flex-direction: column; } }
+
 .sidebar {
-  flex: 1.5; }
+  flex: 0 0 20rem; }
   .sidebar .user__card,
   .sidebar .skills {
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    border-radius: .8rem;
-    flex-wrap: wrap; }
+    border-radius: .8rem; }
     .sidebar .user__card .user__star-rating,
     .sidebar .skills .user__star-rating {
       padding: 1rem;
@@ -188,9 +191,13 @@ a {
       .sidebar .user__card .user__star-rating .star--title,
       .sidebar .skills .user__star-rating .star--title {
         color: #939598; }
-    .sidebar .user__card .user__image-container .user--image,
-    .sidebar .skills .user__image-container .user--image {
-      max-width: 100%; }
+    .sidebar .user__card .user__image-container,
+    .sidebar .skills .user__image-container {
+      width: 100%; }
+      .sidebar .user__card .user__image-container .user--image,
+      .sidebar .skills .user__image-container .user--image {
+        max-width: 100%;
+        object-fit: contain; }
 
 .user__description {
   text-align: center; }
@@ -267,13 +274,14 @@ a {
 
 .images-container {
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  flex-basis: 20rem; }
   .images-container .images--first-image {
     max-width: 100%;
     width: 15rem;
     object-fit: cover;
     border-radius: .4rem;
-    margin-right: 1rem; }
+    margin: 1rem 1rem 1rem 0; }
 
 .experience {
   display: flex;
@@ -307,3 +315,16 @@ a {
     border: none; }
     .bio .physical__section .physical--description {
       margin-bottom: 1rem; }
+
+@media screen and (max-width: 1004px) {
+  .images-container {
+    flex-wrap: nowrap; }
+  .experience .experience__section {
+    margin-right: 2rem; }
+  .experience .experience--length {
+    margin-bottom: 0; } }
+
+@media screen and (max-width: 647px) {
+  .images-container {
+    display: flex;
+    flex-wrap: wrap; } }

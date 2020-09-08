@@ -5,9 +5,15 @@
     display: flex
     justify-content: space-between
 
+@media screen and (max-width: 565px)
+    .container__bottom
+        flex-direction: column
+
+    .sidebar
+
 // * SIDEBAR
 .sidebar
-    flex: 1.5
+    flex: 0 0 20rem
 
     .user__card,
     .skills
@@ -15,7 +21,8 @@
         flex-direction: column
         background-color: #fff
         border-radius: .8rem
-        flex-wrap: wrap
+
+        // flex-wrap: wrap
 
         .user__star-rating
             padding: 1rem
@@ -30,9 +37,11 @@
                 color: $dark_gray
 
         .user__image-container
+            width: 100%
 
             .user--image
                 max-width: 100%
+                object-fit: contain
 
 .user__description
     text-align: center
