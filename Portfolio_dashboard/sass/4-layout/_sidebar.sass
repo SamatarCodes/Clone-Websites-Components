@@ -8,12 +8,11 @@
 @media screen and (max-width: 565px)
     .container__bottom
         flex-direction: column
-
-    .sidebar
+        max-width: 80%
 
 // * SIDEBAR
 .sidebar
-    flex: 0 0 20rem
+    flex: 0 0 20%
 
     .user__card,
     .skills
@@ -105,3 +104,6 @@
 // * MAIN CONTENT ON THE RIGHT
 .content
     flex: 4
+@media screen and (max-width: 565px)
+    .skills
+        margin-bottom: 2rem

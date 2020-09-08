@@ -20,15 +20,18 @@
 .images-container
     display: flex
     flex-wrap: wrap
-    // width: 100%
-    flex-basis: 20rem
+    width: 100%
+
     .images--first-image
-        max-width: 100%
-        width: 15rem
+
+        width: 20%
+        height: 30%
         object-fit: cover
         border-radius: .4rem
         margin: 1rem 1rem 1rem 0
-
+        max-width: 100%
+        // width: 15rem
+        margin: 1rem 1rem 1rem 0
 .experience
     display: flex
     margin-top: 3rem
@@ -39,7 +42,7 @@
         display: flex
         flex-direction: column
         justify-content: space-between
-        flex: 0 0 10%
+        flex: 0 1 10%
 
         .experience--length
             font-weight: bold
@@ -68,6 +71,7 @@
 
             margin-bottom: 1rem
 
+// * MEDIA QUERIES 
 @media screen and (max-width: 1004px)
     .images-container
         flex-wrap: nowrap
@@ -79,8 +83,36 @@
         .experience--length
             margin-bottom: 0
 
-@media screen and (max-width: 647px)
+@media screen and (max-width: 780px)
 
     .images-container
         display: flex
         flex-wrap: wrap
+
+        .images--first-image
+            width: 40%
+            margin: 0 auto
+            margin-bottom: 1rem
+
+@media screen and (max-width: 565px)
+    .content
+        margin-left: 0
+    .images-container
+
+        .images--first-image
+            width: 100%
+
+    .experience
+        flex-wrap: wrap
+
+        .experience__section
+            margin-bottom: 1rem
+
+    .bio
+        flex-direction: column
+
+        .bio--text
+            margin-bottom: 3rem
+
+        .physical__section
+            justify-content: flex-start
