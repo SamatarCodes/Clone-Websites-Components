@@ -50,6 +50,11 @@ a {
   color: #939598;
   background-color: #FEDBDB; }
 
+@media screen and (max-width: 900px) {
+  .project--btn {
+    margin-bottom: 1rem;
+    font-size: 1rem; } }
+
 .container__top {
   background-color: #fff; }
   .container__top .navbar {
