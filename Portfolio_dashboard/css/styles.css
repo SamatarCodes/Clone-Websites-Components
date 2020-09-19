@@ -163,7 +163,8 @@ a {
       justify-content: space-between;
       flex: 1; }
     .navbar .hamburger-icon {
-      display: block; } }
+      display: block;
+      cursor: pointer; } }
 
 .container__bottom {
   width: 90%;
@@ -172,7 +173,7 @@ a {
   display: flex;
   justify-content: space-between; }
 
-@media screen and (max-width: 565px) {
+@media screen and (max-width: 686px) {
   .container__bottom {
     flex-direction: column;
     max-width: 80%; } }
@@ -262,7 +263,7 @@ a {
 .content {
   flex: 4; }
 
-@media screen and (max-width: 565px) {
+@media screen and (max-width: 670px) {
   .skills {
     margin-bottom: 2rem; } }
 
