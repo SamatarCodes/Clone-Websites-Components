@@ -50,7 +50,8 @@ a {
     .edit-container .first-section .delete {
       position: absolute;
       top: 1rem;
-      right: 2rem; }
+      right: 2rem;
+      cursor: pointer; }
   .edit-container .second-section {
     background-color: #2F3056; }
     .edit-container .second-section .form {
@@ -87,5 +88,11 @@ a {
     .edit-container .third-section .save-box--cancel {
       background-color: #2A2B4F;
       margin-right: 1rem; }
+      .edit-container .third-section .save-box--cancel:hover {
+        background-color: #131324;
+        transition: background-color ease-in 300ms; }
     .edit-container .third-section .save-box--save {
       background-color: #F27362; }
+      .edit-container .third-section .save-box--save:hover {
+        background-color: #f02d14;
+        transition: background-color ease-in 300ms; }
