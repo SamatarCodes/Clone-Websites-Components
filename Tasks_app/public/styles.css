@@ -21236,6 +21236,10 @@ video {
           animation: bounce 1s infinite;
 }
 
+.addLineThrough {
+  text-decoration: line-through;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
