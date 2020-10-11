@@ -5,10 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tailwind Template</title>
-    <link rel="stylesheet" href="src/styles.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="public/styles.css">
 </head>
 
 <body>
+    <div class="min-h-screen bg-gray-100 py-6 flex flex-col items-center justify-center sm:py-12">
+        <div class="container text-white min-h-full bg-black w-6/12 px-6 py-4 rounded-lg max-w-md">
+            <div class="text-white rounded-full h-8 w-8 bg-red-700 ml-auto">
+                <button>
+                    <i class="fas fa-plus px-2 py-2 text-black"></i>
+                </button>
+            </div>
+            <div class="title flex">
+                <h3 class="pb-3 mb-3 mr-1">Tasks</h3>
+                <span class="text-xs text-gray-700">5</span>
+            </div>
+            <div class="todos" id="todos">
+                <!-- per todo -->
+
+                <div class="perTodo border-t border-gray-900 b py-2 flex justify-between items-center ">
+                    <div class="left-side">
+                        <input type="checkbox" class="mr-2" />
+                        <span class="text-gray-400 text-sm">Clean the house</span>
+                    </div>
+                    <button id="deleteBtn"><i class="far fa-trash-alt"></i></button>
+                </div>
+                <div class="perTodo border-t border-gray-900 b py-2 flex justify-between items-center ">
+                    <div class="left-side">
+                        <input type="checkbox" class="mr-2" />
+                        <span class="text-gray-400 text-sm">Study JavaScript</span>
+                    </div>
+                    <button id="deleteBtn"><i class="far fa-trash-alt"></i></button>
+                </div>
+
+            </div>
+            <!-- end of todo -->
+            <div class="input-section border-t border-gray-800">
+                <input type="text" class="w-full bg-gray-900 py-1 border border-gray-800 rounded mt-4 px-2">
+                <div class="buttons text-xs flex justify-end mt-3">
+                    <button class="mr-2">Cancel</button>
+                    <button class="text-red-600">Add Task</button>
+
+                </div>
+            </div>
+        </div>
 
 </body>
 
