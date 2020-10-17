@@ -39,16 +39,49 @@ a {
     font-size: 1.5rem;
     color: #ececec; }
 
-.movie__genres {
-  flex: 0 0 45%;
+.section {
   display: flex;
-  font-size: 1.3rem; }
+  position: relative;
+  flex: 0 0 50%;
+  justify-content: space-between; }
+
+.browse__container {
+  align-items: center;
+  margin-left: 2rem;
+  flex: 0 0 5%;
+  display: none; }
+
+.movie__genres {
+  font-size: 1.3rem;
+  display: flex; }
 
 .movie__list {
   margin-right: 2rem;
   transition: all .3s ease-in; }
   .movie__list:hover {
     color: #ececec; }
+
+.nav-toggle {
+  display: none; }
+
+.nav-toggle:checked ~ .movie__genres {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5rem;
+  background-color: #101218;
+  left: 0;
+  width: 30rem;
+  text-align: center; }
+  .nav-toggle:checked ~ .movie__genres .movie__list {
+    margin: 1rem auto; }
+
+@media screen and (max-width: 885px) {
+  .browse__container {
+    display: flex;
+    flex: 0 0 5rem; }
+  .movie__genres {
+    display: none; } }
 
 .right__side {
   display: flex;

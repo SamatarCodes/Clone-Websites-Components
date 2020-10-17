@@ -36,18 +36,28 @@ a
     padding: 1rem 4rem
     align-items: center
     justify-content: space-between
-    // flex-wrap: wrap
 
     .logo
         font-size: 1.5rem
         color: #ececec
 
+.section
+    display: flex
+    position: relative
+    flex: 0 0 50%
+    justify-content: space-between
+
+// ! BROWSE CONTAINER
+.browse__container
+    align-items: center
+    margin-left: 2rem
+    flex: 0 0 5%
+    display: none
+
 // ! MOVIE LINKS 
 .movie__genres
-    flex: 0 0 45%
-    display: flex
     font-size: 1.3rem
-    // flex-wrap: wrap
+    display: flex
 
 .movie__list
     margin-right: 2rem
@@ -55,6 +65,30 @@ a
 
     &:hover
         color: #ececec
+
+// ! TOGGLE 
+.nav-toggle
+    display: none
+.nav-toggle:checked ~ .movie__genres
+    display: flex
+    flex-direction: column
+    position: absolute
+    top: 5rem
+    background-color: #101218
+    left: 0
+    width: 30rem
+    text-align: center
+
+    .movie__list
+        margin: 1rem auto
+
+@media screen and ( max-width: 885px )
+    .browse__container
+        display: flex
+        flex: 0 0 5rem
+
+    .movie__genres
+        display: none
 
 .right__side
     display: flex
