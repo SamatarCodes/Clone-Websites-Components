@@ -16,7 +16,10 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 1.5;
-  overflow-x: hidden; }
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 100vh; }
 
 img {
   display: block;
@@ -36,7 +39,7 @@ a {
   align-items: center;
   justify-content: space-between; }
   .header__row .logo {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #ececec; }
 
 .section {
@@ -116,3 +119,40 @@ a {
       margin-right: 1rem; }
     .right__side .user__profile .user--name {
       font-size: 1.3rem; }
+
+.image__container {
+  width: 10rem; }
+
+.bottom_section {
+  display: flex;
+  margin: 2rem 4rem;
+  flex: 1; }
+  .bottom_section .sidebar {
+    background-color: #14161D;
+    flex: 0 0 20rem;
+    padding: 1rem; }
+    .bottom_section .sidebar .sidebar--title {
+      font-size: 1.4rem;
+      color: #365ce7;
+      opacity: .8; }
+    .bottom_section .sidebar .menu {
+      margin-top: 1rem;
+      font-size: 1.3rem; }
+    .bottom_section .sidebar .menu__list_item {
+      margin-top: 1rem; }
+  .bottom_section .right__section {
+    background-color: #14161D;
+    padding-top: 1rem;
+    flex: 1; }
+    .bottom_section .right__section .popular__movies .popular__movies--title {
+      font-size: 1.8rem;
+      color: #ececec;
+      letter-spacing: .1rem; }
+    .bottom_section .right__section .popular__movies .movies__container {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 1rem; }
+    .bottom_section .right__section .popular__movies .movie .movie--title {
+      color: #ececec;
+      margin-top: .5rem; }

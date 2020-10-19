@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap')
+$text_color: #ececec
+$light_blue: #365ce7
+
 *,
 *::after,
 *::before
@@ -12,11 +15,15 @@ html
 
 body
     background-color: #14161D
+    //background-color: #1C1D21
     color: #4B4C54
     font-family: 'Poppins', sans-serif
     font-weight: 400
     line-height: 1.5
+    display: flex
+    flex-direction: column
     overflow-x: hidden
+    min-height: 100vh
 
 img
     display: block
@@ -30,6 +37,7 @@ a
     text-decoration: none
 
 // ! HEADER 
+
 .header__row
     background-color: #101218
     display: flex
@@ -38,8 +46,8 @@ a
     justify-content: space-between
 
     .logo
-        font-size: 1.5rem
-        color: #ececec
+        font-size: 1.8rem
+        color: $text_color
 
 .section
     display: flex
@@ -64,7 +72,7 @@ a
     transition: all .3s ease-in
 
     &:hover
-        color: #ececec
+        color: $text_color
 
 // ! TOGGLE 
 .nav-toggle
@@ -102,7 +110,7 @@ a
         position: relative
 
     .search--bar
-        color: #ececec
+        color: $text_color
         width: 10rem
         border: .5px solid #1c1c24
         border-radius: 4px
@@ -112,7 +120,7 @@ a
         margin-right: 4rem
 
         &::placeholder
-            color: #ececec
+            color: $text_color
 
         &:focus
             width: 15rem
@@ -133,3 +141,62 @@ a
 
         .user--name
             font-size: 1.3rem
+
+.image__container
+    width: 10rem
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+.bottom_section
+    display: flex
+    margin: 2rem 4rem
+    flex: 1
+
+    .sidebar
+        background-color: #14161D
+        flex: 0 0 20rem
+        padding: 1rem
+
+        .sidebar--title
+            font-size: 1.4rem
+            color: $light_blue
+            opacity: .8
+
+        .menu
+            margin-top: 1rem
+            font-size: 1.3rem
+
+        .menu__list_item
+            margin-top: 1rem
+
+    .right__section
+        background-color: #14161D
+        padding-top: 1rem
+        flex: 1
+
+        .popular__movies
+            //outline: 1px solid red
+            .popular__movies--title
+                font-size: 1.8rem
+                color: $text_color
+                letter-spacing: .1rem
+
+            .movies__container
+                margin-top: 1rem
+                display: grid
+                // grid-template-columns: 25% 25% 25% 25%
+                //grid-template-columns: 1fr 1fr 1fr 1fr
+                grid-template-columns: repeat(5, 1fr)
+                //grid-auto-rows: minmax(20rem, auto)
+                //grid-template-rows: repeat(3, minmax(100px, auto))
+                // grid-column-gap: 1rem
+                // grid-row-gap: 1rem
+                // we can use a combo of gap
+                grid-gap: 1rem
+            .movie
+
+                //margin-top: 2rem
+                // margin-right: 4rem
+
+                .movie--title
+                    color: $text_color
+                    margin-top: .5rem
