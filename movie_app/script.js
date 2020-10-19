@@ -1,16 +1,5 @@
-//const key = require('./key');
-
-//const movieContainer = document.getElementById('movie_container');
-//const checkbox = document.getElementById('nav-toggle');
 const moviesContainer = document.getElementById('movies__container');
 const tvContainer = document.getElementById('tv_container');
-
-// window.addEventListener('resize', () => {
-//   if (document.body.clientWidth >= 885) {
-//     checkbox.checked = false;
-//     console.log('check');
-//   }
-// });
 
 // * fetch movies
 
@@ -19,16 +8,16 @@ const popularMovies = `https://api.themoviedb.org/3/movie/popular?api_key=${apiK
 const popularTvShows = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-US&page=1`;
 const fetchMovies = async () => {
   try {
+    // Fetch movies and tv shows
     const response = await fetch(popularMovies);
     const responseTvShows = await fetch(popularTvShows);
 
     const moviesArray = await response.json();
     const tvArray = await responseTvShows.json();
-    console.log(tvArray);
+
+    // Call both movies and tv shows functions
     displayPopularMovies(moviesArray.results);
     displayPopularTvShows(tvArray.results);
-
-    //console.log(moviesArray);
   } catch (err) {
     console.log(err);
   }
