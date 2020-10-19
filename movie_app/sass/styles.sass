@@ -43,18 +43,51 @@ a
     display: flex
     padding: 1rem 4rem
     align-items: center
-    justify-content: space-between
+    // justify-content: space-between
 
     .logo
         font-size: 1.8rem
         color: $text_color
 
+.nav
+    display: flex
+    flex: 1
 .section
     display: flex
     position: relative
     flex: 0 0 50%
     justify-content: space-between
 
+// ! SEARCH MOVIE INPUT
+.input
+    position: relative
+    margin-left: 8rem
+
+    .search--bar
+        color: $text_color
+        width: 22rem
+
+        border: none
+        border-bottom: .5px solid #1c1c24
+        border-radius: 4px
+        background-color: transparent
+        padding: .5rem 3rem
+        transition: width .2s linear
+
+        // margin-right: 4rem
+        outline: none
+
+        &::placeholder
+            color: $text_color
+            opacity: .3
+
+        // &:focus
+        //     width: 22rem
+
+    .search--icon
+        position: absolute
+        top: 28%
+        left: 5%
 // ! BROWSE CONTAINER
 .browse__container
     align-items: center
@@ -104,31 +137,7 @@ a
     flex: 0 0 20%
     align-items: center
     position: relative
-
-    // ! SEARCH MOVIE INPUT
-    .input
-        position: relative
-
-    .search--bar
-        color: $text_color
-        width: 10rem
-        border: .5px solid #1c1c24
-        border-radius: 4px
-        background-color: transparent
-        padding: .5rem 3rem
-        transition: width .2s linear
-        margin-right: 4rem
-
-        &::placeholder
-            color: $text_color
-
-        &:focus
-            width: 15rem
-
-    .search--icon
-        position: absolute
-        top: 30%
-        left: 5%
+    margin-left: auto
 
     .user__profile
         flex: 0 0 3rem
@@ -167,18 +176,24 @@ a
 
         .menu__list_item
             margin-top: 1rem
+            transition: all .3s ease-in
+
+            &:hover
+                color: $text_color
 
     .right__section
         background-color: #14161D
         padding-top: 1rem
         flex: 1
 
-        .popular__movies
+        .movies
             //outline: 1px solid red
-            .popular__movies--title
+            .movies--title
                 font-size: 1.8rem
                 color: $text_color
                 letter-spacing: .1rem
+                display: inline-block
+                margin-right: 2rem
 
             .movies__container
                 margin-top: 1rem
@@ -200,3 +215,16 @@ a
                 .movie--title
                     color: $text_color
                     margin-top: .5rem
+        
+        .tv-shows
+            margin-top: 4rem 
+
+
+.footer
+    display: flex 
+    background-color: #1C1D21
+    padding: 2rem 
+    justify-content: center 
+    
+    .logo__image
+        width: 20rem 

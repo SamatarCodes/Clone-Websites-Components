@@ -36,17 +36,41 @@ a {
   background-color: #101218;
   display: flex;
   padding: 1rem 4rem;
-  align-items: center;
-  justify-content: space-between; }
+  align-items: center; }
   .header__row .logo {
     font-size: 1.8rem;
     color: #ececec; }
+
+.nav {
+  display: flex;
+  flex: 1; }
 
 .section {
   display: flex;
   position: relative;
   flex: 0 0 50%;
   justify-content: space-between; }
+
+.input {
+  position: relative;
+  margin-left: 8rem; }
+  .input .search--bar {
+    color: #ececec;
+    width: 22rem;
+    border: none;
+    border-bottom: .5px solid #1c1c24;
+    border-radius: 4px;
+    background-color: transparent;
+    padding: .5rem 3rem;
+    transition: width .2s linear;
+    outline: none; }
+    .input .search--bar::placeholder {
+      color: #ececec;
+      opacity: .3; }
+  .input .search--icon {
+    position: absolute;
+    top: 28%;
+    left: 5%; }
 
 .browse__container {
   align-items: center;
@@ -91,26 +115,8 @@ a {
   justify-content: flex-end;
   flex: 0 0 20%;
   align-items: center;
-  position: relative; }
-  .right__side .input {
-    position: relative; }
-  .right__side .search--bar {
-    color: #ececec;
-    width: 10rem;
-    border: .5px solid #1c1c24;
-    border-radius: 4px;
-    background-color: transparent;
-    padding: .5rem 3rem;
-    transition: width .2s linear;
-    margin-right: 4rem; }
-    .right__side .search--bar::placeholder {
-      color: #ececec; }
-    .right__side .search--bar:focus {
-      width: 15rem; }
-  .right__side .search--icon {
-    position: absolute;
-    top: 30%;
-    left: 5%; }
+  position: relative;
+  margin-left: auto; }
   .right__side .user__profile {
     flex: 0 0 3rem;
     cursor: pointer; }
@@ -139,20 +145,35 @@ a {
       margin-top: 1rem;
       font-size: 1.3rem; }
     .bottom_section .sidebar .menu__list_item {
-      margin-top: 1rem; }
+      margin-top: 1rem;
+      transition: all .3s ease-in; }
+      .bottom_section .sidebar .menu__list_item:hover {
+        color: #ececec; }
   .bottom_section .right__section {
     background-color: #14161D;
     padding-top: 1rem;
     flex: 1; }
-    .bottom_section .right__section .popular__movies .popular__movies--title {
+    .bottom_section .right__section .movies .movies--title {
       font-size: 1.8rem;
       color: #ececec;
-      letter-spacing: .1rem; }
-    .bottom_section .right__section .popular__movies .movies__container {
+      letter-spacing: .1rem;
+      display: inline-block;
+      margin-right: 2rem; }
+    .bottom_section .right__section .movies .movies__container {
       margin-top: 1rem;
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-gap: 1rem; }
-    .bottom_section .right__section .popular__movies .movie .movie--title {
+    .bottom_section .right__section .movies .movie .movie--title {
       color: #ececec;
       margin-top: .5rem; }
+    .bottom_section .right__section .tv-shows {
+      margin-top: 4rem; }
+
+.footer {
+  display: flex;
+  background-color: #1C1D21;
+  padding: 2rem;
+  justify-content: center; }
+  .footer .logo__image {
+    width: 20rem; }
