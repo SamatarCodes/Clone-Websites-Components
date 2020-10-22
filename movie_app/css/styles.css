@@ -137,22 +137,28 @@ a {
     background-color: #14161D;
     flex: 0 0 20rem;
     padding: 1rem; }
-    .bottom_section .sidebar .sidebar--title {
+    .bottom_section .sidebar .sidebar--title,
+    .bottom_section .sidebar .menu__tv--title {
       font-size: 1.4rem;
       color: #365ce7;
       opacity: .8; }
     .bottom_section .sidebar .menu {
       margin-top: 1rem;
-      font-size: 1.3rem; }
+      font-size: 1.2rem; }
     .bottom_section .sidebar .menu__list_item {
       margin-top: 1rem;
       transition: all .3s ease-in; }
       .bottom_section .sidebar .menu__list_item:hover {
         color: #ececec; }
+    .bottom_section .sidebar .menu__tv--title {
+      margin-top: 3rem; }
   .bottom_section .right__section {
     background-color: #14161D;
     padding-top: 1rem;
     flex: 1; }
+    .bottom_section .right__section .tv-shows {
+      border-top: 1px solid red;
+      padding-top: 2rem; }
     .bottom_section .right__section .movies .movies--title {
       font-size: 1.8rem;
       color: #ececec;

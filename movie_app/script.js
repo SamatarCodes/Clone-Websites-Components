@@ -9,6 +9,7 @@ const apiKey = key(); //  REMOVE THIS FUNCTION AND ENTER YOUR API KEY HERE
 const popularMovies = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
 const popularTvShows = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-US&page=1`;
 
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 const fetchMovies = async () => {
   try {
     // Fetch movies and tv shows
@@ -83,22 +84,6 @@ const displayPopularMovies = (moviesArray) => {
   // loop through the movie array
   moviesArray.forEach((movie) => {
     createMovieDom(movie);
-    // Create a movie div
-    //   const movieCard = document.createElement('div');
-    //   // Add movie class
-    //   movieCard.classList.add('movie');
-    //   // create the innerHTML for each movie
-    //   movieCard.innerHTML = `
-    // <a href="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
-    //       <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt=""
-    //       class="movie--image">
-    // </a>
-    //         <h4 class="movie--title">${movie.original_title}</h4>
-    //         <span class="movie--genre"> ${movie.release_date}</span>
-    // `;
-
-    //   // append it
-    //   moviesContainer.appendChild(movieCard);
   });
 };
 //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -109,7 +94,6 @@ const displayPopularTvShows = (tvArray) => {
     createTvDom(tv);
   });
 };
-//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 const onInput = async (e) => {
@@ -121,40 +105,11 @@ const onInput = async (e) => {
   results.forEach((movie) => {
     // for each  movie
     if (movie.media_type === 'movie') {
-      // display it in movie section
-      // Create a movie div
-      //     const movieCard = document.createElement('div');
-      //     // Add movie class
-      //     movieCard.classList.add('movie');
-      //     // create the innerHTML for each movie
-      //     movieCard.innerHTML = `
-      // <a href="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
-      //       <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt=""
-      //       class="movie--image">
-      // </a>
-      //         <h4 class="movie--title">${movie.original_title}</h4>
-      //         <span class="movie--genre"> ${movie.release_date}</span>
-      // `;
       createMovieDom(movie);
       // append it
       //moviesContainer.appendChild(movieCard);
     } else if (movie.media_type === 'tv') {
       // Create a movie div
-      //   const movieCard = document.createElement('div');
-      //   // Add movie class
-      //   movieCard.classList.add('movie');
-
-      //   movieCard.innerHTML = `
-      // <a href="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
-      //       <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt=""
-      //       class="movie--image">
-      // </a>
-      //         <h4 class="movie--title">${movie.original_name}</h4>
-      //         <span class="movie--genre"> ${movie.first_air_date}</span>
-      // `;
-
-      //   // append to tv container
-      //   tvContainer.appendChild(movieCard);
       createTvDom(movie);
     }
   });
@@ -166,4 +121,5 @@ const onInput = async (e) => {
 // Search input
 searchInput.addEventListener('input', debounce(onInput, 500));
 
-fetchMovies();
+// Load movies
+//fetchMovies();
