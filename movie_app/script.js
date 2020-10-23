@@ -1,16 +1,17 @@
 const moviesContainer = document.getElementById('movies__container');
 const tvContainer = document.getElementById('tv_container');
 const searchInput = document.getElementById('search');
+const menuLi = document.querySelectorAll('.menu__list_item');
 
-//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 // * fetch movies
 
 const apiKey = key(); //  REMOVE THIS FUNCTION AND ENTER YOUR API KEY HERE
 const popularMovies = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
 const popularTvShows = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}&language=en-US&page=1`;
 
-//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-const fetchMovies = async () => {
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+const loadPopularMoviesAndTvs = async () => {
   try {
     // Fetch movies and tv shows
     const response = await fetch(popularMovies);
@@ -27,8 +28,28 @@ const fetchMovies = async () => {
     console.log(err);
   }
 };
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-const fetchData = async (searchTerm) => {
+const fetchAnything = async (category, filter) => {
+  const data = `https://api.themoviedb.org/3/${category}/${filter}?api_key=${apiKey}&language=en-US&page=1`;
+  try {
+    const response = await fetch(data);
+    const resultsData = await response.json();
+    //console.log(resultsData.results);
+
+    if (category === 'movie') {
+      displayPopularMovies(resultsData.results);
+    } else if (category === 'tv') {
+      console.log(resultsData.results);
+      displayPopularTvShows(resultsData.results);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+const searchData = async (searchTerm) => {
   try {
     const response = await fetch(
       `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&page=1&include_adult=false&query=${searchTerm}`
@@ -39,6 +60,7 @@ const fetchData = async (searchTerm) => {
     console.log(err);
   }
 };
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 const createTvDom = (tv) => {
   // Create a movie div
@@ -78,7 +100,7 @@ const createMovieDom = (movie) => {
   moviesContainer.appendChild(movieCard);
 };
 
-//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 const displayPopularMovies = (moviesArray) => {
   moviesContainer.innerHTML = '';
   // loop through the movie array
@@ -86,7 +108,7 @@ const displayPopularMovies = (moviesArray) => {
     createMovieDom(movie);
   });
 };
-//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 const displayPopularTvShows = (tvArray) => {
   tvContainer.innerHTML = '';
   // Loop through the tv array
@@ -95,21 +117,22 @@ const displayPopularTvShows = (tvArray) => {
   });
 };
 
-//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 const onInput = async (e) => {
   const userInput = e.target.value;
-  const results = await fetchData(e.target.value);
-  console.log(results);
+  const results = await searchData(e.target.value); // returns array
+
+  // Clear movie container
   moviesContainer.innerHTML = '';
+  // Clear tv container
   tvContainer.innerHTML = '';
+
+  // loop through the results of search data
   results.forEach((movie) => {
     // for each  movie
     if (movie.media_type === 'movie') {
       createMovieDom(movie);
-      // append it
-      //moviesContainer.appendChild(movieCard);
     } else if (movie.media_type === 'tv') {
-      // Create a movie div
       createTvDom(movie);
     }
   });
@@ -117,9 +140,22 @@ const onInput = async (e) => {
   e.target.value = '';
 };
 
-//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+//|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 // Search input
 searchInput.addEventListener('input', debounce(onInput, 500));
 
-// Load movies
-//fetchMovies();
+// Sidebar  Menu
+menuLi.forEach((menu) => {
+  menu.addEventListener('click', () => {
+    if (menu.textContent === 'Popular Movies') {
+      fetchAnything('movie', 'popular');
+    } else if (menu.textContent === 'Popular TV Shows') {
+      fetchAnything('tv', 'popular');
+    } else if (menu.textContent === 'Airing Today') {
+      fetchAnything('tv', 'airing_today');
+    }
+  });
+});
+
+//Load movies
+loadPopularMoviesAndTvs();

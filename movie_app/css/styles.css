@@ -157,7 +157,7 @@ a {
     padding-top: 1rem;
     flex: 1; }
     .bottom_section .right__section .tv-shows {
-      border-top: 1px solid red;
+      border-top: 1px solid #365ce7;
       padding-top: 2rem; }
     .bottom_section .right__section .movies .movies--title {
       font-size: 1.8rem;
