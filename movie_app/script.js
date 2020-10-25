@@ -153,6 +153,8 @@ menuLi.forEach((menu) => {
       fetchAnything('tv', 'popular');
     } else if (menu.textContent === 'Airing Today') {
       fetchAnything('tv', 'airing_today');
+    } else if (menu.textContent === 'Top Rated') {
+      fetchAnything('tv', 'top_rated');
     }
   });
 });
