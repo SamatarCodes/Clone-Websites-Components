@@ -147,14 +147,21 @@ searchInput.addEventListener('input', debounce(onInput, 500));
 // Sidebar  Menu
 menuLi.forEach((menu) => {
   menu.addEventListener('click', () => {
-    if (menu.textContent === 'Popular Movies') {
-      fetchAnything('movie', 'popular');
-    } else if (menu.textContent === 'Popular TV Shows') {
-      fetchAnything('tv', 'popular');
-    } else if (menu.textContent === 'Airing Today') {
-      fetchAnything('tv', 'airing_today');
-    } else if (menu.textContent === 'Top Rated') {
-      fetchAnything('tv', 'top_rated');
+    switch (menu.textContent) {
+      case 'Popular Movies':
+        fetchAnything('movie', 'popular');
+        break;
+      case 'Popular TV Shows':
+        fetchAnything('tv', 'popular');
+        break;
+      case 'Airing Today':
+        fetchAnything('tv', 'airing_today');
+        break;
+      case 'Top Rated':
+        fetchAnything('tv', 'top_rated');
+        break;
+      default:
+        fetchAnything('movie', 'popular');
     }
   });
 });
