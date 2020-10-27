@@ -21172,14 +21172,30 @@ video {
 }
 
 @-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+
   50% {
     opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
 @keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+
   50% {
     opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
@@ -21211,6 +21227,34 @@ video {
   }
 }
 
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
 .animate-none {
   -webkit-animation: none;
           animation: none;
@@ -21227,8 +21271,8 @@ video {
 }
 
 .animate-pulse {
-  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  -webkit-animation: pulse .8s cubic-bezier(0.4, 0, 0.6, 1);
+          animation: pulse .8s cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 .animate-bounce {
@@ -21236,8 +21280,20 @@ video {
           animation: bounce 1s infinite;
 }
 
+.animate-disappear {
+  -webkit-animation: disappear .8s  cubic-bezier(0.4, 0, 0.6, 1);
+          animation: disappear .8s  cubic-bezier(0.4, 0, 0.6, 1);
+}
+
 .addLineThrough {
   text-decoration: line-through;
+}
+
+.display {
+  opacity: 0;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: linear;
+  transition-duration: 700ms
 }
 
 @media (min-width: 640px) {
@@ -41814,13 +41870,18 @@ video {
   }
 
   .sm\:animate-pulse {
-    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    -webkit-animation: pulse .8s cubic-bezier(0.4, 0, 0.6, 1);
+            animation: pulse .8s cubic-bezier(0.4, 0, 0.6, 1);
   }
 
   .sm\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .sm\:animate-disappear {
+    -webkit-animation: disappear .8s  cubic-bezier(0.4, 0, 0.6, 1);
+            animation: disappear .8s  cubic-bezier(0.4, 0, 0.6, 1);
   }
 }
 
@@ -62398,13 +62459,18 @@ video {
   }
 
   .md\:animate-pulse {
-    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    -webkit-animation: pulse .8s cubic-bezier(0.4, 0, 0.6, 1);
+            animation: pulse .8s cubic-bezier(0.4, 0, 0.6, 1);
   }
 
   .md\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .md\:animate-disappear {
+    -webkit-animation: disappear .8s  cubic-bezier(0.4, 0, 0.6, 1);
+            animation: disappear .8s  cubic-bezier(0.4, 0, 0.6, 1);
   }
 }
 
@@ -82982,13 +83048,18 @@ video {
   }
 
   .lg\:animate-pulse {
-    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    -webkit-animation: pulse .8s cubic-bezier(0.4, 0, 0.6, 1);
+            animation: pulse .8s cubic-bezier(0.4, 0, 0.6, 1);
   }
 
   .lg\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .lg\:animate-disappear {
+    -webkit-animation: disappear .8s  cubic-bezier(0.4, 0, 0.6, 1);
+            animation: disappear .8s  cubic-bezier(0.4, 0, 0.6, 1);
   }
 }
 
@@ -103566,12 +103637,17 @@ video {
   }
 
   .xl\:animate-pulse {
-    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    -webkit-animation: pulse .8s cubic-bezier(0.4, 0, 0.6, 1);
+            animation: pulse .8s cubic-bezier(0.4, 0, 0.6, 1);
   }
 
   .xl\:animate-bounce {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
+  }
+
+  .xl\:animate-disappear {
+    -webkit-animation: disappear .8s  cubic-bezier(0.4, 0, 0.6, 1);
+            animation: disappear .8s  cubic-bezier(0.4, 0, 0.6, 1);
   }
 }

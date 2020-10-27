@@ -6,3 +6,9 @@
 .addLineThrough {
     text-decoration: line-through;
 }
+
+.display {
+    @apply opacity-0 transition ease-linear duration-700
+
+    
+}
