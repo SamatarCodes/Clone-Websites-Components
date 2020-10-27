@@ -151,7 +151,10 @@ menuLi.forEach((menu) => {
       case 'Popular Movies':
         fetchAnything('movie', 'popular');
         break;
-      case 'Popular TV Shows':
+      case 'Now Playing':
+        fetchAnything('movie', 'now_playing');
+        break;
+      case 'Popular TV Shows':s
         fetchAnything('tv', 'popular');
         break;
       case 'Airing Today':
@@ -160,6 +163,7 @@ menuLi.forEach((menu) => {
       case 'Top Rated':
         fetchAnything('tv', 'top_rated');
         break;
+
       default:
         fetchAnything('movie', 'popular');
     }
