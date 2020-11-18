@@ -2,8 +2,10 @@ const moviesContainer = document.getElementById('movies__container');
 const tvContainer = document.getElementById('tv_container');
 const searchInput = document.getElementById('search');
 const menuLi = document.querySelectorAll('.menu__list_item');
+const img = document.querySelectorAll('img');
 const moviesAndTvs = new Movies();
 
+let movieId;
 // * Debounce function helper
 const debounce = (func, delay = 1000) => {
   let timeoutId;
@@ -25,15 +27,17 @@ const debounce = (func, delay = 1000) => {
 };
 
 const createTvDom = (tv) => {
+  //console.log(tv);
   // Create a movie div
   const movieCard = document.createElement('div');
   // Add movie class
   movieCard.classList.add('movie');
-
+  // https://image.tmdb.org/t/p/w500/${tv.poster_path}
   movieCard.innerHTML = `
-    <a href="https://image.tmdb.org/t/p/w500/${tv.poster_path}">
+  
+    <a href="movie.html">
           <img src="https://image.tmdb.org/t/p/w500/${tv.poster_path}" alt=""
-          class="movie--image">
+          class="movie--image" data-tv-id=${tv.id} >
     </a>
             <h4 class="movie--title">${tv.original_name}</h4>
             <span class="movie--genre"> ${tv.first_air_date}</span>
@@ -50,9 +54,9 @@ const createMovieDom = (movie) => {
   movieCard.classList.add('movie');
   // create the innerHTML for each movie
   movieCard.innerHTML = `
-    <a href="https://image.tmdb.org/t/p/w500/${movie.poster_path}">
+  <a href="movie.html">
           <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt=""
-          class="movie--image">
+          class="movie--image" data-movie-id=${movie.id}>
     </a>
             <h4 class="movie--title">${movie.original_title}</h4>
             <span class="movie--genre"> ${movie.release_date}</span>
@@ -63,7 +67,6 @@ const createMovieDom = (movie) => {
 };
 
 //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
 const displayPopularMovies = (moviesArray) => {
   moviesContainer.innerHTML = '';
   // loop through the movie array
@@ -131,6 +134,29 @@ menuLi.forEach((menu) => {
         moviesAndTvs.fetchAnything('movie', 'popular');
     }
   });
+});
+const saveMovieToLocalStorage = (movieId) => {
+  localStorage.setItem('movieId', movieId);
+};
+
+const saveTvToLocalStorage = (tvId) => {
+  localStorage.setItem('tvId', tvId);
+};
+
+document.addEventListener('click', (e) => {
+  if (e.target.tagName.toLowerCase() === 'img') {
+    //moviesAndTvs.test = e.target.getAttribute('data-movie-id');
+    const movieID = e.target.getAttribute('data-movie-id');
+    const tvID = e.target.getAttribute('data-tv-id');
+
+    // check which id that is defined to localStorage so we can use it on another file
+    saveMovieToLocalStorage(movieID);
+    if (movieID) {
+      saveMovieToLocalStorage(movieID);
+    } else {
+      saveTvToLocalStorage(tvID);
+    }
+  }
 });
 
 //Load movies

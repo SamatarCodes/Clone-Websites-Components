@@ -183,3 +183,39 @@ a {
   justify-content: center; }
   .footer .logo__image {
     width: 20rem; }
+
+.movie__section {
+  flex: 1; }
+
+.movie__container {
+  color: #ececec;
+  display: flex;
+  margin-top: 5rem;
+  width: 70%;
+  max-width: 100rem;
+  margin: 5rem auto; }
+  .movie__container .movie--image {
+    width: 75%; }
+
+.movie__description {
+  width: 100%;
+  margin-left: 7rem; }
+  .movie__description .movie__release {
+    margin-top: 2rem; }
+    .movie__description .movie__release .movie__title {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 2rem;
+      align-items: center; }
+      .movie__description .movie__release .movie__title .movie--name {
+        font-size: 2rem; }
+    .movie__description .movie__release .movie__release--date {
+      color: #4B4C54; }
+  .movie__description .movie__bio {
+    margin-top: 2rem;
+    font-size: 1.3rem; }
+  .movie__description .star-vote {
+    font-size: 1.5rem; }
+  .movie__description .star {
+    color: yellow;
+    padding-right: .5rem; }
