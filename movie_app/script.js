@@ -18,6 +18,20 @@ class Movies {
       console.log(err);
     }
   }
+  async getTvDetails(tvId) {
+    const tvDetails = `https://api.themoviedb.org/3/tv/${tvId}?api_key=${this.key}`;
+
+    try {
+      // Fetch movies and tv shows
+      const response = await fetch(tvDetails);
+      const movieInfo = await response.json();
+      console.log(movieInfo);
+      return movieInfo;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   async loadPopularMoviesAndTvs() {
     try {
       // Fetch movies and tv shows
