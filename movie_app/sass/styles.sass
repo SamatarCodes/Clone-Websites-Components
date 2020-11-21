@@ -189,11 +189,20 @@ a
         padding-top: 1rem
         flex: 1
 
+        .hide__movies
+             display: none
+             //background-color: blue
+             
+
         .tv-shows
             border-top: 1px solid $light_blue
             padding-top: 2rem 
         .movies
-            //outline: 1px solid red
+
+            .show
+                 display: none
+               
+     
             .movies--title
                 font-size: 1.8rem
                 color: $text_color
@@ -201,7 +210,8 @@ a
                 display: inline-block
                 margin-right: 2rem
 
-            .movies__container
+            .movies__container,
+            
                 margin-top: 1rem
                 display: grid
                 // grid-template-columns: 25% 25% 25% 25%
@@ -224,8 +234,9 @@ a
         
         .tv-shows
             margin-top: 4rem 
+        
 
-
+ 
 .footer
     display: flex 
     background-color: #1C1D21

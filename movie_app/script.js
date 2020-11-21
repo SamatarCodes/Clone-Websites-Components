@@ -43,6 +43,19 @@ class Movies {
 
       // Call both movies and tv shows functions
       displayPopularMovies(moviesArray.results);
+      //displayPopularTvShows(tvArray.results);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async loadPopularTvs() {
+    try {
+      // Fetch tv shows
+      const responseTvShows = await fetch(this.popularTvShows);
+      const tvArray = await responseTvShows.json();
+
+      // Call tv shows function
       displayPopularTvShows(tvArray.results);
     } catch (err) {
       console.log(err);
@@ -54,11 +67,11 @@ class Movies {
     try {
       const response = await fetch(data);
       const resultsData = await response.json();
+      console.log(resultsData);
 
       if (category === 'movie') {
         displayPopularMovies(resultsData.results);
       } else if (category === 'tv') {
-        console.log(resultsData.results);
         displayPopularTvShows(resultsData.results);
       }
     } catch (err) {
