@@ -47,7 +47,7 @@ a
 
     .logo
         font-size: 1.8rem
-        color: $text_color
+        color: $light_blue
 
 .nav
     display: flex
@@ -222,7 +222,7 @@ a
                 // grid-column-gap: 1rem
                 // grid-row-gap: 1rem
                 // we can use a combo of gap
-                grid-gap: 1rem
+                grid-gap: 1.5rem
             .movie
 
                 //margin-top: 2rem
@@ -237,15 +237,7 @@ a
         
 
  
-.footer
-    display: flex 
-    background-color: #1C1D21
-    padding: 2rem 
-    justify-content: center 
-  
-    
-    .logo__image
-        width: 20rem 
+
 
 // MOVIE PAGE SECTION
 .movie__section
@@ -259,17 +251,21 @@ a
     max-width: 100rem
     margin: 5rem auto
     
+    
 
+    .image__section
+        width: 60%
 
     .movie--image
-        width: 75%
+        border-radius: .4rem
+        
         
        
 
 
 .movie__description
     width: 100%
-    margin-left: 7rem 
+    margin-right: 7rem 
 
     .movie__release
         margin-top: 2rem 
@@ -289,12 +285,40 @@ a
 
     .movie__bio 
         margin-top: 2rem 
-        font-size: 1.3rem 
+        font-size: 1.1rem 
+
+        .movie__bio--text
+            color: #cccccc
+
+
+        .credit
+            margin-top: 2rem
+            display: flex
+            flex-direction: column
+            
    
     .star-vote
         font-size: 1.5rem
+      
       
     .star
         color: yellow 
         padding-right: .5rem
     
+        
+    
+    .video__section
+        margin-top: 2rem
+
+        .video--title
+            font-size: 1rem
+    
+.footer
+    display: flex 
+    background-color: #1C1D21
+    padding: 2rem 
+    justify-content: center 
+  
+    
+    .logo__image
+        width: 20rem 
