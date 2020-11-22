@@ -39,7 +39,7 @@ a {
   align-items: center; }
   .header__row .logo {
     font-size: 1.8rem;
-    color: #ececec; }
+    color: #365ce7; }
 
 .nav {
   display: flex;
@@ -173,20 +173,12 @@ a {
       margin-top: 1rem;
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      grid-gap: 1rem; }
+      grid-gap: 1.5rem; }
     .bottom_section .right__section .movies .movie .movie--title {
       color: #ececec;
       margin-top: .5rem; }
     .bottom_section .right__section .tv-shows {
       margin-top: 4rem; }
-
-.footer {
-  display: flex;
-  background-color: #1C1D21;
-  padding: 2rem;
-  justify-content: center; }
-  .footer .logo__image {
-    width: 20rem; }
 
 .movie__section {
   flex: 1; }
@@ -198,12 +190,14 @@ a {
   width: 70%;
   max-width: 100rem;
   margin: 5rem auto; }
+  .movie__container .image__section {
+    width: 60%; }
   .movie__container .movie--image {
-    width: 75%; }
+    border-radius: .4rem; }
 
 .movie__description {
   width: 100%;
-  margin-left: 7rem; }
+  margin-right: 7rem; }
   .movie__description .movie__release {
     margin-top: 2rem; }
     .movie__description .movie__release .movie__title {
@@ -217,9 +211,27 @@ a {
       color: #4B4C54; }
   .movie__description .movie__bio {
     margin-top: 2rem;
-    font-size: 1.3rem; }
+    font-size: 1.1rem; }
+    .movie__description .movie__bio .movie__bio--text {
+      color: #cccccc; }
+    .movie__description .movie__bio .credit {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column; }
   .movie__description .star-vote {
     font-size: 1.5rem; }
   .movie__description .star {
     color: yellow;
     padding-right: .5rem; }
+  .movie__description .video__section {
+    margin-top: 2rem; }
+    .movie__description .video__section .video--title {
+      font-size: 1rem; }
+
+.footer {
+  display: flex;
+  background-color: #1C1D21;
+  padding: 2rem;
+  justify-content: center; }
+  .footer .logo__image {
+    width: 20rem; }
