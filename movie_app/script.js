@@ -9,17 +9,51 @@ class Movies {
   async getMovieDetails(movieId) {
     const movieDetails = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${this.key}`;
 
+    // Also get movie credits
+    const getMovieCredits = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${this.key}`;
+
     try {
-      // Fetch movies and tv shows
+      // Fetch movies
       const response = await fetch(movieDetails);
+      const responseCasts = await fetch(getMovieCredits);
+
       const movieInfo = await response.json();
-      return movieInfo;
+      const movieCredits = await responseCasts.json();
+
+      return {
+        movieInfo,
+        movieCredits,
+      };
     } catch (err) {
       console.log(err);
     }
   }
   async getTvDetails(tvId) {
     const tvDetails = `https://api.themoviedb.org/3/tv/${tvId}?api_key=${this.key}`;
+
+    // Also get the tv credits
+    const getTvCredits = `https://api.themoviedb.org/3/tv/${tvId}/credits?api_key=${this.key}`;
+
+    try {
+      // Fetch movies and tv shows
+      const response = await fetch(tvDetails);
+      const responseCredits = await fetch(getTvCredits);
+
+      const movieInfo = await response.json();
+      const creditInfo = await responseCredits.json(); // array of credit cast
+
+      // return movieInfo;
+      return {
+        movieInfo,
+        creditInfo: creditInfo.cast,
+      };
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async getMovieTrailer() {
+    const tvDetails = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${this.key}`;
 
     try {
       // Fetch movies and tv shows

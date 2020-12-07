@@ -7,7 +7,7 @@ const showTvSection = document.querySelector('.show');
 const hideMovies = document.querySelector('.hide__movies');
 const moviesAndTvs = new Movies();
 
-// ! |||||||||||||||||||||||||||||||DEBOUNCE|||||||||||||||||||||||||||||||||||||||||||||||||||||
+// ! |||||||||||||||||||||||||||||||DEBOUNCE||||||||||||||||||||||||||||||||
 let movieId;
 // * Debounce function helper
 const debounce = (func, delay = 1000) => {
@@ -28,7 +28,7 @@ const debounce = (func, delay = 1000) => {
     }, delay);
   };
 };
-// ! |||||||||||||||||||||||||||||||||TV DOM||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// ! |||||||||||||||||||||||||||||||||TV DOM||||||||||||||||||||||||||||||||
 const createTvDom = (tv) => {
   //console.log(tv);
   // Create a movie div
@@ -50,7 +50,7 @@ const createTvDom = (tv) => {
   tvContainer.appendChild(movieCard);
 };
 
-// ! ||||||||||||||||||||||||||||||||MOVIE DOM||||||||||||||||||||||||||||||||||||||||||||||||||||
+// ! ||||||||||||||||||||||||||||||||MOVIE DOM|||||||||||||||||||||||||||||
 const createMovieDom = (movie) => {
   // Create a movie div
   const movieCard = document.createElement('div');
@@ -70,7 +70,7 @@ const createMovieDom = (movie) => {
   moviesContainer.appendChild(movieCard);
 };
 
-// ! ||||||||||||||||||||||||||||||||SEARCH TV RESULTS||||||||||||||||||||||||||||||||||||||||||||
+// ! ||||||||||||||||||||||||||||||||SEARCH TV RESULTS||||||||||||||||||||||
 const showTvSearchResults = (tv) => {
   const movieCard = document.createElement('div');
   // Add movie class
@@ -93,7 +93,7 @@ const showTvSearchResults = (tv) => {
   tvContainer.appendChild(movieCard);
 };
 
-// ! ||||||||||||||||||||||||||||||DISPLAY POPULAR MOVIES AND TV SHOWS |||||||||||||||||||||||||||
+// ! ||||||||||||||||||||||||||||||DISPLAY POPULAR MOVIES AND TV SHOWS ||||||||
 const displayPopularMovies = (moviesArray) => {
   // Clear movie container div
   moviesContainer.innerHTML = '';
@@ -119,7 +119,7 @@ const displayPopularTvShows = (tvArray) => {
   showTvSection.classList.remove('show');
 };
 
-// ! ||||||||||||||||||||||||||||||ON INPUT ||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// ! ||||||||||||||||||||||||||||||ON INPUT |||||||||||||||||||||||||||||||||||||
 // If user
 const onInput = async (e) => {
   const userInput = e.target.value;
@@ -147,7 +147,7 @@ const onInput = async (e) => {
   e.target.value = '';
 };
 
-// !|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// !||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 // Search input
 searchInput.addEventListener('input', debounce(onInput, 500));
 
@@ -178,7 +178,7 @@ menuLi.forEach((menu) => {
     }
   });
 });
-// ! ||||||||||||||||||||||||||||||||LOCAL STORAGE||||||||||||||||||||||||||||||||||||||||||||||||||||
+// ! ||||||||||||||||||||||||||||||||LOCAL STORAGE||||||||||||||||||||||||||||||||||||||||||||
 // We're using the local storage to store the movie ID
 const saveMovieToLocalStorage = (movieId) => {
   localStorage.setItem('movieId', movieId);
@@ -188,7 +188,7 @@ const saveMovieToLocalStorage = (movieId) => {
 const saveTvToLocalStorage = (tvId) => {
   localStorage.setItem('tvId', tvId);
 };
-// ! ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+// ! |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 // If user clicks on an image, grab the movieID and TV id if there's any
 document.addEventListener('click', (e) => {
   if (e.target.tagName.toLowerCase() === 'img') {
