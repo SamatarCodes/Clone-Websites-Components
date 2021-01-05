@@ -219,7 +219,8 @@ a {
       display: flex;
       flex-direction: column; }
   .movie__description .star-vote {
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    color: #df1e1e; }
   .movie__description .star {
     color: yellow;
     padding-right: .5rem; }

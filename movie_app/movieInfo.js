@@ -33,7 +33,7 @@ const createMovieDom = async (getInfo) => {
       <!-- title -->
       <div class="movie__title">
           <h3 class="movie--name">${original_title}</h3>
-          <span class="star-vote"><i class="fas fa-star star"></i>${vote_average}</span>
+          <span class="star-vote"><i class="fas fa-star star"></i>${vote_average}/10</span>
       </div>
       <div class="movie__release--date">
           <span>${new Date(release_date).toDateString()}</span> |
