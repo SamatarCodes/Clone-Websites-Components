@@ -20,8 +20,6 @@ const createMovieDom = async (getInfo) => {
 
   // Movie cast
   const { name } = movieDetails.movieCredits.cast[0];
-  //console.log(movieDetails.movieCredits.cast[0].name);
-  console.log(name);
 
   // Create a movie div
   const movieCard = document.createElement('div');
