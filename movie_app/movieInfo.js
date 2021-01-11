@@ -4,6 +4,9 @@ const movies = new Movies();
 // Grab movieId and tvId from local storage
 const getMovieId = localStorage.getItem('movieId');
 const getTvId = localStorage.getItem('tvId');
+
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 // Load the DOM
 const createMovieDom = async (getInfo) => {
   const movieDetails = await getInfo;
@@ -22,6 +25,7 @@ const createMovieDom = async (getInfo) => {
   //const { name } = movieDetails.movieCredits.cast;
 
   // Create a movie div
+
   const movieCard = document.createElement('div');
   // add movie class for styling
   movieCard.classList.add('movie__container');
@@ -73,6 +77,7 @@ const createMovieDom = async (getInfo) => {
   movieContainer.appendChild(movieCard);
 };
 
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 const createTVDom = async (getInfo) => {
   // getInfo is an async so we wait to get the info back
   const tvDetails = await getInfo;
@@ -146,6 +151,8 @@ const createTVDom = async (getInfo) => {
   // movieCard.appendChild(actorDiv);
   movieContainer.appendChild(movieCard);
 };
+
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // check local Storage to see if Movie or tv is null
 if (getMovieId !== 'null') {
