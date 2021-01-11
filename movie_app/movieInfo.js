@@ -19,7 +19,7 @@ const createMovieDom = async (getInfo) => {
   } = movieDetails.movieInfo;
 
   // Movie cast
-  const { name } = movieDetails.movieCredits.cast[0];
+  //const { name } = movieDetails.movieCredits.cast;
 
   // Create a movie div
   const movieCard = document.createElement('div');
@@ -43,19 +43,21 @@ const createMovieDom = async (getInfo) => {
   <div class="movie__bio">
       <p class="movie__bio--text">${overview}</p>
       <div class="credit">
-          <span>Director: ${movieDetails.movieCredits.crew[0].name}</span>
+          <span><span class="credit--cast">Director:</span> ${
+            movieDetails.movieCredits.crew[0].name
+          }</span>
          
-          <span>Cast: ${
+          <span class="credit2"><span class="credit--cast">Cast:</span> ${
             movieDetails.movieCredits.cast[0] !== undefined
               ? movieDetails.movieCredits.cast[0].name
-              : ''
-          }, ${
+              : 'Not Listed'
+          } <span> ${
     movieDetails.movieCredits.cast[1] !== undefined
-      ? movieDetails.movieCredits.cast[2].name
+      ? ', ' + movieDetails.movieCredits.cast[2].name
       : ''
-  }, ${
+  }</span> ${
     movieDetails.movieCredits.cast[2] !== undefined
-      ? movieDetails.movieCredits.cast[2].name
+      ? ', ' + movieDetails.movieCredits.cast[2].name
       : ''
   }
   </span>
@@ -141,7 +143,6 @@ const createTVDom = async (getInfo) => {
   </div>
       `;
 
-  // const creditCast = document.querySelector('.movie__bio');
   // movieCard.appendChild(actorDiv);
   movieContainer.appendChild(movieCard);
 };
