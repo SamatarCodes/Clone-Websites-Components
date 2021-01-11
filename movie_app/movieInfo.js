@@ -1,4 +1,5 @@
 const movieContainer = document.querySelector('.movie__section');
+const castImages = document.querySelector('.cast__images');
 
 const movies = new Movies();
 // Grab movieId and tvId from local storage
@@ -21,11 +22,13 @@ const createMovieDom = async (getInfo) => {
     poster_path,
   } = movieDetails.movieInfo;
 
-  // Movie cast
-  //const { name } = movieDetails.movieCredits.cast;
+  // Movie cast - name of actors
+  const { name, id, character, profile_path } = movieDetails.movieCredits.cast;
+  console.log(movieDetails.movieCredits.cast[0]);
+  // Call the showCast function
+  showCast(movieDetails.movieCredits.cast);
 
   // Create a movie div
-
   const movieCard = document.createElement('div');
   // add movie class for styling
   movieCard.classList.add('movie__container');
@@ -57,7 +60,7 @@ const createMovieDom = async (getInfo) => {
               : 'Not Listed'
           } <span> ${
     movieDetails.movieCredits.cast[1] !== undefined
-      ? ', ' + movieDetails.movieCredits.cast[2].name
+      ? ', ' + movieDetails.movieCredits.cast[1].name
       : ''
   }</span> ${
     movieDetails.movieCredits.cast[2] !== undefined
@@ -76,13 +79,59 @@ const createMovieDom = async (getInfo) => {
 
   movieContainer.appendChild(movieCard);
 };
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+const showCast = (castArray) => {
+  // if there's a cast array, list it
+  if (castArray !== undefined) {
+    // loop through it
+
+    for (i = 0; i <= 9; i++) {
+      const movie = document.createElement('div');
+      movie.classList.add('movie');
+      if (castArray[i] !== undefined) {
+        movie.innerHTML = `
+        <div>
+       
+            <img src="https://image.tmdb.org/t/p/w500/${
+              castArray[i].profile_path !== undefined
+                ? castArray[i].profile_path
+                : ''
+            }" alt=""
+                class="movie--image">
+      
+        <h4 class="movie--title">${castArray[i].name} </h4>
+        <span class="movie--genre">${castArray[i].character}</span>
+      </div>
+        
+        
+        `;
+      }
+      castImages.appendChild(movie);
+    }
+    //     castArray.forEach((actor) => {
+    //       const movie = document.createElement('div');
+    //       movie.classList.add('movie');
+    //       movie.innerHTML = `
+    //   <div>
+
+    //       <img src="https://image.tmdb.org/t/p/w500/${actor.profile_path}" alt=""
+    //           class="movie--image">
+
+    //   <h4 class="movie--title">${actor.name} </h4>
+    //   <span class="movie--genre">${actor.character}</span>
+    // </div>
+
+    //   `;
+    //       castImages.appendChild(movie);
+    //     });
+  }
+};
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 const createTVDom = async (getInfo) => {
   // getInfo is an async so we wait to get the info back
   const tvDetails = await getInfo;
-  console.log(tvDetails.creditInfo);
-  console.log(tvDetails.creditInfo.length);
 
   // Destructuring the tvdetails information
   const {
