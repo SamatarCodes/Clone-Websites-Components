@@ -210,7 +210,7 @@ a
                 display: inline-block
                 margin-right: 2rem
 
-            .movies__container,
+            .movies__container
             
                 margin-top: 1rem
                 display: grid
@@ -242,6 +242,7 @@ a
 // MOVIE PAGE SECTION
 .movie__section
     flex: 1
+    border-bottom: 1px solid #a7a7a734
     
 .movie__container
     color: $text_color
@@ -285,7 +286,7 @@ a
 
     .movie__bio 
         margin-top: 2rem 
-        font-size: 1.1rem 
+        font-size: 1.2rem 
 
         .movie__bio--text
             color: #cccccc
@@ -295,6 +296,14 @@ a
             margin-top: 2rem
             display: flex
             flex-direction: column
+
+            .credit--cast
+                font-weight: bold
+                font-size: 1.2rem
+
+            
+                    
+
             
    
     .star-vote
@@ -313,6 +322,33 @@ a
 
         .video--title
             font-size: 1rem
+    
+
+.cast__list
+    display: flex
+    flex-direction: column
+
+    .cast-title
+        font-size: 2.5rem
+        color: $text_color
+    .cast__container
+        margin-top: 1rem
+        display: grid
+        grid-template-columns: repeat(5, 1fr)
+        grid-gap: 2rem
+
+        .movie--title,
+        .movie--cast-name
+            color: $text_color
+            margin-top: .5rem
+
+        .movie--title
+            font-size: 1.4rem
+        .movie--cast-name
+            font-size: 1.2rem
+            opacity: .8
+       
+
     
 .footer
     display: flex 
