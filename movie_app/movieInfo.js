@@ -168,15 +168,15 @@ const createTVDom = async (getInfo) => {
           <p class="movie__bio--text">${overview}</p>
           <div class="credit">
           <span>Director: ${createdBy}</span>
-          <span>Cast: ${tvDetails.creditInfo[0].name}, 
+          <span>Cast: ${tvDetails.creditInfo[0].name}
           ${
             tvDetails.creditInfo[1] !== undefined
-              ? tvDetails.creditInfo[1].name
+              ? ', ' + tvDetails.creditInfo[1].name
               : ''
-          },
+          }
           ${
             tvDetails.creditInfo[2] !== undefined
-              ? tvDetails.creditInfo[2].name
+              ? ', ' + tvDetails.creditInfo[2].name
               : ''
           } 
           
