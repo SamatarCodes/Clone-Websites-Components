@@ -129,7 +129,8 @@ const createTVDom = async (getInfo) => {
   } = tvDetails.movieInfo;
 
   console.log(tvDetails.creditInfo);
-  //showCast(movieDetails.movieCredits.cast);
+
+  showCast(tvDetails.creditInfo);
 
   // TV director
   let createdBy;
