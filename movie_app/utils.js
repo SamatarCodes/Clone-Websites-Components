@@ -52,6 +52,7 @@ const createTvDom = (tv) => {
 
 // ! ||||||||||||||||||||||||||||||||MOVIE DOM|||||||||||||||||||||||||||||
 const createMovieDom = (movie) => {
+  console.log(movie);
   // Create a movie div
   const movieCard = document.createElement('div');
   // Add movie class
@@ -63,7 +64,9 @@ const createMovieDom = (movie) => {
           class="movie--image" data-movie-id=${movie.id}>
     </a>
             <h4 class="movie--title">${movie.original_title}</h4>
-            <span class="movie--genre"> ${movie.release_date}</span>
+            <span class="movie--genre"> ${new Date(
+              movie.release_date
+            ).toDateString()}</span>
     `;
 
   // append it
@@ -75,7 +78,6 @@ const showTvSearchResults = (tv) => {
   const movieCard = document.createElement('div');
   // Add movie class
   movieCard.classList.add('tv');
-  // https://image.tmdb.org/t/p/w500/${tv.poster_path}
   movieCard.innerHTML = `
   <h2 class=" movies--title">TV SHOWS</h2>
   <span class=" movies--text">TV Shows people are watching now </span>
@@ -100,6 +102,7 @@ const displayPopularMovies = (moviesArray) => {
   // Clear tv container div
   tvContainer.innerHTML = '';
   moviesArray.forEach((movie) => {
+    // for each movie, call this function below
     createMovieDom(movie);
   });
   // Do not show the tv shows section
