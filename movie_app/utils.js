@@ -43,7 +43,9 @@ const createTvDom = (tv) => {
           class="movie--image" data-tv-id=${tv.id} >
     </a>
             <h4 class="movie--title">${tv.original_name}</h4>
-            <span class="movie--genre"> ${tv.first_air_date}</span>
+            <span class="movie--genre"> ${new Date(
+              tv.first_air_date
+            ).toDateString()}</span>
     `;
 
   // append to tv container
