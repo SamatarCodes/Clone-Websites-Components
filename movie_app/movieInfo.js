@@ -23,8 +23,8 @@ const createMovieDom = async (getInfo) => {
   } = movieDetails.movieInfo;
 
   // Movie cast - name of actors
-  const { name, id, character, profile_path } = movieDetails.movieCredits.cast;
-  console.log(movieDetails.movieCredits.cast[0]);
+  //const { name, id, character, profile_path } = movieDetails.movieCredits.cast;
+  // console.log(movieDetails.movieCredits.cast[0]);
   // Call the showCast function
   showCast(movieDetails.movieCredits.cast);
 
@@ -89,6 +89,8 @@ const showCast = (castArray) => {
     for (i = 0; i <= 9; i++) {
       const movie = document.createElement('div');
       movie.classList.add('movie');
+
+      // If actor NOT undefined, show it
       if (castArray[i] !== undefined) {
         movie.innerHTML = `
         <div>
@@ -109,22 +111,6 @@ const showCast = (castArray) => {
       }
       castImages.appendChild(movie);
     }
-    //     castArray.forEach((actor) => {
-    //       const movie = document.createElement('div');
-    //       movie.classList.add('movie');
-    //       movie.innerHTML = `
-    //   <div>
-
-    //       <img src="https://image.tmdb.org/t/p/w500/${actor.profile_path}" alt=""
-    //           class="movie--image">
-
-    //   <h4 class="movie--title">${actor.name} </h4>
-    //   <span class="movie--genre">${actor.character}</span>
-    // </div>
-
-    //   `;
-    //       castImages.appendChild(movie);
-    //     });
   }
 };
 
@@ -142,6 +128,9 @@ const createTVDom = async (getInfo) => {
     poster_path,
   } = tvDetails.movieInfo;
 
+  console.log(tvDetails.creditInfo);
+  //showCast(movieDetails.movieCredits.cast);
+
   // TV director
   let createdBy;
   // Check if we have a name of who created the show
@@ -158,6 +147,7 @@ const createTVDom = async (getInfo) => {
   // add movie class for styling
   movieCard.classList.add('movie__container');
 
+  // Movie HTML
   movieCard.innerHTML = `
       
   <div class="movie__description">
@@ -180,14 +170,17 @@ const createTVDom = async (getInfo) => {
           <span>Director: ${createdBy}</span>
           <span>Cast: ${tvDetails.creditInfo[0].name}, 
           ${
-            tvDetails.creditInfo[1].name !== undefined
+            tvDetails.creditInfo[1] !== undefined
               ? tvDetails.creditInfo[1].name
               : ''
-          }, ${
-    tvDetails.creditInfo[2].name !== undefined
-      ? tvDetails.creditInfo[2].name
-      : ''
-  } </span>
+          },
+          ${
+            tvDetails.creditInfo[2] !== undefined
+              ? tvDetails.creditInfo[2].name
+              : ''
+          } 
+          
+         </span>
 
       </div>
       </div>
