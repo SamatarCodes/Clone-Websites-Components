@@ -94,13 +94,19 @@ const showCast = (castArray) => {
       if (castArray[i] !== undefined) {
         movie.innerHTML = `
         <div>
-       
-            <img src="https://image.tmdb.org/t/p/w500/${
-              castArray[i].profile_path !== undefined
-                ? castArray[i].profile_path
-                : ''
-            }" alt=""
+        <a href="https://image.tmdb.org/t/p/w500/${
+          castArray[i].profile_path !== undefined
+            ? castArray[i].profile_path
+            : ''
+        }">
+        <img src="https://image.tmdb.org/t/p/w500/${
+          castArray[i].profile_path !== undefined
+            ? castArray[i].profile_path
+            : ''
+        }" alt=""
                 class="movie--image">
+        </a>
+            
       
         <h4 class="movie--title">${castArray[i].name} </h4>
         <span class="movie--genre">${castArray[i].character}</span>
