@@ -29,10 +29,10 @@ const debounce = (func, delay = 1000) => {
   };
 };
 // ! |||||||||||||||||||||||||||||||||TV DOM||||||||||||||||||||||||||||||||
-const createTvDom = (tv) => {
-  // Get the movie Details to grab the cast list for each movie
-  //const tvDetail = await moviesAndTvs.getMovieDetails(tv.id);
-  //console.log(tvDetail);
+const createTvDom = async (tv) => {
+  // Get the tv Details to grab the cast list for each movie
+  const tvDetail = await moviesAndTvs.getTvDetails(tv.id);
+
   // Create a movie div
   const movieCard = document.createElement('div');
   // Add movie class
@@ -47,7 +47,20 @@ const createTvDom = (tv) => {
             <h4 class="movie--title">${tv.original_name}</h4>
             <span class="movie--genre"> ${new Date(
               tv.first_air_date
-            ).toDateString()}</span>
+            ).toDateString()}</span></br>
+            <span>${
+              tvDetail.movieInfo.genres[0] !== undefined
+                ? tvDetail.movieInfo.genres[0].name
+                : ''
+            } ${
+    tvDetail.movieInfo.genres[1] !== undefined
+      ? ', ' + tvDetail.movieInfo.genres[1].name
+      : ''
+  } ${
+    tvDetail.movieInfo.genres[2] !== undefined
+      ? ',' + tvDetail.movieInfo.genres[2].name
+      : ''
+  }</span>
     `;
 
   // append to tv container
