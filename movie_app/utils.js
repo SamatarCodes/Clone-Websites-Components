@@ -30,7 +30,9 @@ const debounce = (func, delay = 1000) => {
 };
 // ! |||||||||||||||||||||||||||||||||TV DOM||||||||||||||||||||||||||||||||
 const createTvDom = (tv) => {
-  //console.log(tv);
+  // Get the movie Details to grab the cast list for each movie
+  //const tvDetail = await moviesAndTvs.getMovieDetails(tv.id);
+  //console.log(tvDetail);
   // Create a movie div
   const movieCard = document.createElement('div');
   // Add movie class
@@ -53,8 +55,10 @@ const createTvDom = (tv) => {
 };
 
 // ! ||||||||||||||||||||||||||||||||MOVIE DOM|||||||||||||||||||||||||||||
-const createMovieDom = (movie) => {
-  console.log(movie);
+const createMovieDom = async (movie) => {
+  // Get the movie Details to grab the cast list for each movie
+  const movieDetail = await moviesAndTvs.getMovieDetails(movie.id);
+
   // Create a movie div
   const movieCard = document.createElement('div');
   // Add movie class
@@ -68,7 +72,20 @@ const createMovieDom = (movie) => {
             <h4 class="movie--title">${movie.original_title}</h4>
             <span class="movie--genre"> ${new Date(
               movie.release_date
-            ).toDateString()}</span>
+            ).toDateString()}</span> </br>
+            <span>${
+              movieDetail.movieInfo.genres[0] !== undefined
+                ? movieDetail.movieInfo.genres[0].name
+                : ''
+            } ${
+    movieDetail.movieInfo.genres[1] !== undefined
+      ? ', ' + movieDetail.movieInfo.genres[1].name
+      : ''
+  } ${
+    movieDetail.movieInfo.genres[2] !== undefined
+      ? ',' + movieDetail.movieInfo.genres[2].name
+      : ''
+  }</span>
     `;
 
   // append it
@@ -103,7 +120,7 @@ const displayPopularMovies = (moviesArray) => {
   moviesContainer.innerHTML = '';
   // Clear tv container div
   tvContainer.innerHTML = '';
-  moviesArray.forEach((movie) => {
+  moviesArray.forEach((movie, index) => {
     // for each movie, call this function below
     createMovieDom(movie);
   });
