@@ -101,7 +101,6 @@ class Movies {
     try {
       const response = await fetch(data);
       const resultsData = await response.json();
-      console.log(resultsData);
 
       if (category === 'movie') {
         displayPopularMovies(resultsData.results);
