@@ -58,7 +58,7 @@ const createTvDom = async (tv) => {
       : ''
   } ${
     tvDetail.movieInfo.genres[2] !== undefined
-      ? ',' + tvDetail.movieInfo.genres[2].name
+      ? ', ' + tvDetail.movieInfo.genres[2].name
       : ''
   }</span>
     `;
