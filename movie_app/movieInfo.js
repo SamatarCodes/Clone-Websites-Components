@@ -22,9 +22,6 @@ const createMovieDom = async (getInfo) => {
     poster_path,
   } = movieDetails.movieInfo;
 
-  // Movie cast - name of actors
-  //const { name, id, character, profile_path } = movieDetails.movieCredits.cast;
-  // console.log(movieDetails.movieCredits.cast[0]);
   // Call the showCast function
   showCast(movieDetails.movieCredits.cast);
 
